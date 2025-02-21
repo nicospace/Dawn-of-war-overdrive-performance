@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4D008A5A-E8D1-4490-83A0-77042B781159}|Redone\\Redone.vcxproj|C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\Redone\\Redoneproject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4D008A5A-E8D1-4490-83A0-77042B781159}|Redone\\Redone.vcxproj|solutionrelative:Redone\\Redoneproject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\SDLThread.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|solutionrelative:GDI HOOKING DLL\\SDLThread.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\ThreadSafeQueue.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|solutionrelative:GDI HOOKING DLL\\ThreadSafeQueue.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\dllmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|solutionrelative:GDI HOOKING DLL\\dllmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\SDLThread.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|solutionrelative:GDI HOOKING DLL\\SDLThread.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\SDLThread.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|solutionrelative:GDI HOOKING DLL\\SDLThread.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\RenderRequest.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -27,10 +35,6 @@
       "RelativeMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|solutionrelative:GDI HOOKING DLL\\IATHooking.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\ThreadSafeQueue.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|solutionrelative:GDI HOOKING DLL\\ThreadSafeQueue.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\VC\\v170\\Microsoft.CppBuild.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
@@ -41,7 +45,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -49,7 +53,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "Redoneproject.cpp",
+              "DocumentMoniker": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\Redone\\Redoneproject.cpp",
+              "RelativeDocumentMoniker": "Redone\\Redoneproject.cpp",
+              "ToolTip": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\Redone\\Redoneproject.cpp",
+              "RelativeToolTip": "Redone\\Redoneproject.cpp",
+              "ViewState": "AgIAAEACAAAAAAAAAAAAAFQCAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-21T20:10:27.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "IATHooking.cpp",
               "DocumentMoniker": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\IATHooking.cpp",
               "RelativeDocumentMoniker": "GDI HOOKING DLL\\IATHooking.cpp",
@@ -61,7 +78,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "IATHooking.h",
               "DocumentMoniker": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\IATHooking.h",
               "RelativeDocumentMoniker": "GDI HOOKING DLL\\IATHooking.h",
@@ -73,7 +90,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "ThreadSafeQueue.h",
               "DocumentMoniker": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\ThreadSafeQueue.h",
               "RelativeDocumentMoniker": "GDI HOOKING DLL\\ThreadSafeQueue.h",
@@ -85,20 +102,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "SDLThread.h",
               "DocumentMoniker": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\SDLThread.h",
               "RelativeDocumentMoniker": "GDI HOOKING DLL\\SDLThread.h",
               "ToolTip": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\SDLThread.h",
               "RelativeToolTip": "GDI HOOKING DLL\\SDLThread.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-21T16:38:17.608Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T16:38:17.608Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Microsoft.CppBuild.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\VC\\v170\\Microsoft.CppBuild.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\VC\\v170\\Microsoft.CppBuild.targets",
@@ -110,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "dllmain.cpp",
               "DocumentMoniker": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\dllmain.cpp",
               "RelativeDocumentMoniker": "GDI HOOKING DLL\\dllmain.cpp",
@@ -118,12 +134,11 @@
               "RelativeToolTip": "GDI HOOKING DLL\\dllmain.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-21T14:14:40.636Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T14:14:40.636Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "RenderRequest.h",
               "DocumentMoniker": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\RenderRequest.h",
               "RelativeDocumentMoniker": "GDI HOOKING DLL\\RenderRequest.h",
@@ -131,12 +146,11 @@
               "RelativeToolTip": "GDI HOOKING DLL\\RenderRequest.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-21T13:53:09.527Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T13:53:09.527Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "SDLThread.cpp",
               "DocumentMoniker": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\SDLThread.cpp",
               "RelativeDocumentMoniker": "GDI HOOKING DLL\\SDLThread.cpp",
@@ -144,8 +158,7 @@
               "RelativeToolTip": "GDI HOOKING DLL\\SDLThread.cpp",
               "ViewState": "AgIAAEoAAAAAAAAAAAAQwHsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-21T13:41:42.293Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T13:41:42.293Z"
             }
           ]
         }
