@@ -1,0 +1,11 @@
+﻿  DebugLogger.cpp
+  PatchLobby.cpp
+  Redoneproject.cpp
+  ZeroPEChecksum.cpp
+     Creating library ..\..\..\Output directory\Patcher\Redone.lib and object ..\..\..\Output directory\Patcher\Redone.exp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 273 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+LINK : warning LNK4039: section '.injsec' specified with /SECTION option does not exist
+  Redone.vcxproj -> C:\Users\n\Documents\Output directory\Patcher\Redone.exe

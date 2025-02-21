@@ -1,0 +1,8 @@
+﻿  pch.cpp
+  dllmain.cpp
+  GDIHookFunctions.cpp
+  IATHooking.cpp
+  SDLThread.cpp
+  Generating Code...
+     Creating library C:\Users\n\Documents\Output directory\GDI AND RENDER\GDI HOOKING DLL.lib and object C:\Users\n\Documents\Output directory\GDI AND RENDER\GDI HOOKING DLL.exp
+  GDI HOOKING DLL.vcxproj -> C:\Users\n\Documents\Output directory\GDI AND RENDER\GDI HOOKING DLL.dll
