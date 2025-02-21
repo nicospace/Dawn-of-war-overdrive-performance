@@ -30,16 +30,10 @@
     <ClInclude Include="IATHooking.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SDLThread.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HookDLLGlobals.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GDIHookFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDI HOOK HEADER.h">
+    <ClInclude Include="SDLThread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -51,9 +45,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="IATHooking.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GDIHookFunctions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SDLThread.cpp">

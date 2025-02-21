@@ -1,0 +1,10 @@
+﻿  pch.cpp
+  dllmain.cpp
+  IATHooking.cpp
+  SDLThread.cpp
+     Creating library C:\Users\n\Documents\Output directory\GDI AND RENDER\GDI HOOKING DLL.lib and object C:\Users\n\Documents\Output directory\GDI AND RENDER\GDI HOOKING DLL.exp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 96 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  GDI HOOKING DLL.vcxproj -> C:\Users\n\Documents\Output directory\GDI AND RENDER\GDI HOOKING DLL.dll
