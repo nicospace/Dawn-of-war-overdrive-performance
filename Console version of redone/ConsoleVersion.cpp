@@ -14,25 +14,71 @@
  *   - Must run as Administrator to modify Soulstorm.exe in Program Files.
  ******************************************************************************/
 
-#include <windows.h>
-#include <psapi.h>
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <string>
-#include <cstring>
-
- // Change these if needed
-static const char* SOULSTORM_PATH = R"(C:\Program Files (x86)\Steam\steamapps\common\Dawn of War Soulstorm\Soulstorm.exe)";
-static const DWORD EXTRA_ALLOC_SIZE = 512u * 1024u * 1024u; // 512 MB
-
-/******************************************************************************
- * Helper: Align a value up to "alignment".
- ******************************************************************************/
-static DWORD Align(DWORD val, DWORD alignment)
-{
-    return (val + alignment - 1) & ~(alignment - 1);
-}
+ #include <windows.h>
+ #include <psapi.h>
+ #include <iostream>
+ #include <fstream>
+ #include <vector>
+ #include <string>
+ #include <cstring>
+ #include <stdexcept>
+ 
+ // Get Soulstorm path from registry
+ static std::string GetSoulstormPathFromRegistry() {
+     HKEY hKey;
+     const wchar_t* regPath = L"SOFTWARE\\WOW6432Node\\THQ\\Dawn of War - Soulstorm";
+     
+     if (RegOpenKeyExW(HKEY_LOCAL_MACHINE, regPath, 0, KEY_READ, &hKey) != ERROR_SUCCESS) {
+         throw std::runtime_error("Failed to open registry key for Soulstorm");
+     }
+     
+     wchar_t buffer[MAX_PATH];
+     DWORD bufferSize = sizeof(buffer);
+     DWORD type = REG_SZ;
+     
+     if (RegQueryValueExW(hKey, L"InstallLocation", 0, &type, (LPBYTE)buffer, &bufferSize) != ERROR_SUCCESS) {
+         RegCloseKey(hKey);
+         throw std::runtime_error("Failed to read InstallLocation from registry");
+     }
+     
+     RegCloseKey(hKey);
+     
+     std::wstring widePath = buffer;
+     if (!widePath.empty() && widePath.back() != L'\\') {
+         widePath += L'\\';
+     }
+     widePath += L"Soulstorm.exe";
+ 
+     // Convert wide string to regular string
+     int size_needed = WideCharToMultiByte(CP_UTF8, 0, widePath.c_str(), -1, NULL, 0, NULL, NULL);
+     std::string strPath(size_needed, 0);
+     WideCharToMultiByte(CP_UTF8, 0, widePath.c_str(), -1, &strPath[0], size_needed, NULL, NULL);
+     
+     // Remove null terminator if present
+     if (!strPath.empty() && strPath.back() == '\0') {
+         strPath.pop_back();
+     }
+ 
+     // Verify the exe exists
+     if (GetFileAttributesA(strPath.c_str()) == INVALID_FILE_ATTRIBUTES) {
+         throw std::runtime_error("Soulstorm.exe not found in installation directory");
+     }
+     
+     return strPath;
+ }
+ 
+ // Initialize path and allocation size
+ static const std::string SOULSTORM_PATH_STR = GetSoulstormPathFromRegistry();
+ static const char* SOULSTORM_PATH = SOULSTORM_PATH_STR.c_str();
+ static const DWORD EXTRA_ALLOC_SIZE = 512u * 1024u * 1024u; // 512 MB
+ 
+ /******************************************************************************
+  * Helper: Align a value up to "alignment".
+  ******************************************************************************/
+ static DWORD Align(DWORD val, DWORD alignment)
+ {
+     return (val + alignment - 1) & ~(alignment - 1);
+ }
 
 /******************************************************************************
  * We will store the new import descriptor, names, and thunks in the new
@@ -544,38 +590,50 @@ static void TestMemoryUsageOfSoulstorm(const char* exePath)
 
 int main()
 {
-    std::cout << "Soulstorm Patcher: Add 512MB Allocation + LAA + Memory Test\n"
-        << "----------------------------------------------------------\n"
-        << "EXE path: " << SOULSTORM_PATH << "\n\n";
+    try {
+        std::cout << "Soulstorm Patcher: Add 512MB Allocation + LAA + Memory Test\n"
+            << "----------------------------------------------------------\n"
+            << "EXE path: " << SOULSTORM_PATH << "\n\n";
 
-    // 1) Ask user if we should patch
-    int r = MessageBoxA(nullptr,
-        "Patch Soulstorm.exe for 512MB injection and Large-Address-Aware?",
-        "Patch?",
-        MB_YESNO | MB_ICONQUESTION);
-    if (r == IDNO) {
-        std::cout << "User canceled patch.\n";
+        // 1) Ask user if we should patch
+        int r = MessageBoxA(nullptr,
+            "Patch Soulstorm.exe for 512MB injection and Large-Address-Aware?",
+            "Patch?",
+            MB_YESNO | MB_ICONQUESTION);
+        if (r == IDNO) {
+            std::cout << "User canceled patch.\n";
+            return 0;
+        }
+
+        // 2) Attempt patch
+        std::cout << "Patching...\n";
+        if (!PatchSoulstormExe(SOULSTORM_PATH)) {
+            MessageBoxA(nullptr, "Patch failed!", "Error", MB_ICONERROR);
+            return 1;
+        }
+        MessageBoxA(nullptr, "Patch succeeded!", "Success", MB_OK);
+
+        // 3) Ask if user wants to test memory usage
+        r = MessageBoxA(nullptr,
+            "Do you want to LAUNCH Soulstorm now and measure memory usage?\n"
+            "To exceed 2 GB, load a large mod or big scenario.",
+            "Test Memory?",
+            MB_YESNO | MB_ICONQUESTION);
+        if (r == IDYES) {
+            TestMemoryUsageOfSoulstorm(SOULSTORM_PATH);
+        }
+
+        std::cout << "Done.\n";
         return 0;
     }
-
-    // 2) Attempt patch
-    std::cout << "Patching...\n";
-    if (!PatchSoulstormExe(SOULSTORM_PATH)) {
-        MessageBoxA(nullptr, "Patch failed!", "Error", MB_ICONERROR);
+    catch (const std::exception& e) {
+        std::cerr << "[ERROR] " << e.what() << std::endl;
+        MessageBoxA(nullptr, e.what(), "Error", MB_ICONERROR);
         return 1;
     }
-    MessageBoxA(nullptr, "Patch succeeded!", "Success", MB_OK);
-
-    // 3) Ask if user wants to test memory usage
-    r = MessageBoxA(nullptr,
-        "Do you want to LAUNCH Soulstorm now and measure memory usage?\n"
-        "To exceed 2 GB, load a large mod or big scenario.",
-        "Test Memory?",
-        MB_YESNO | MB_ICONQUESTION);
-    if (r == IDYES) {
-        TestMemoryUsageOfSoulstorm(SOULSTORM_PATH);
+    catch (...) {
+        std::cerr << "[ERROR] Unknown error occurred" << std::endl;
+        MessageBoxA(nullptr, "Unknown error occurred", "Error", MB_ICONERROR);
+        return 1;
     }
-
-    std::cout << "Done.\n";
-    return 0;
 }
