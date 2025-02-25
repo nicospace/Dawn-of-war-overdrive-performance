@@ -155,9 +155,9 @@ FuncType getProcAddress(DllHandle& dll, const std::string& funcName) {
 }
 
 #define PATCH_ADDRESS 0x007D1496
-#define PATCH_SIGNATURE { 0x75, 0x40 } // Original JNZ bytes
-#define PATCH_SIZE_NEW 2 // Size of the patch (2 bytes for NOP NOP)
-static const BYTE PATCH_BYTES_NEW[2] = { 0x90, 0x90 }; // NOP instructions
+#define PATCH_SIGNATURE { 0x75, 0x40 }
+#define PATCH_BYTES { 0x90, 0x90 }
+#define PATCH_SIZE sizeof(PATCH_BYTES)
 
 DWORD_PTR FindPatchAddress(BYTE* signature, size_t sigSize) {
     SYSTEM_INFO sysInfo;
@@ -194,54 +194,103 @@ DWORD_PTR FindPatchAddress(BYTE* signature, size_t sigSize) {
     return 0;
 }
 
-void PatchMultiplayerLobbyNew(HANDLE hProcess, LPVOID patchAddr) {
-    DWORD oldProtect = 0;
-    MEMORY_BASIC_INFORMATION memInfo = { 0 };
-    BYTE patchData[2] = { 0 };
-    SIZE_T bytesWritten = 0;
-
-    DebugLogger::Log(DebugLogger::INFO, "PatchMultiplayerLobbyNew: Starting patch at address %p", patchAddr);
-
-    if (VirtualQueryEx(hProcess, patchAddr, &memInfo, sizeof(memInfo)) == 0) {
-        DWORD error = GetLastError();
-        DebugLogger::Log(DebugLogger::CRITICAL, "PatchMultiplayerLobbyNew: VirtualQueryEx failed at %p, Error: %lu", patchAddr, error);
-        return;
-    }
-    DebugLogger::Log(DebugLogger::INFO, "PatchMultiplayerLobbyNew: Memory info - Protect: %lu, Base: %p, Size: %lu",
-        memInfo.Protect, memInfo.BaseAddress, memInfo.RegionSize);
-
-    DebugLogger::Log(DebugLogger::INFO, "PatchMultiplayerLobbyNew: Setting memory to PAGE_EXECUTE_READWRITE at %p", patchAddr);
-    if (!VirtualProtectEx(hProcess, patchAddr, PATCH_SIZE_NEW, PAGE_EXECUTE_READWRITE, &oldProtect)) {
-        DWORD error = GetLastError();
-        DebugLogger::Log(DebugLogger::CRITICAL, "PatchMultiplayerLobbyNew: VirtualProtectEx failed to set writable at %p, Error: %lu", patchAddr, error);
-        return;
-    }
-    DebugLogger::Log(DebugLogger::INFO, "PatchMultiplayerLobbyNew: Memory protection changed, old protection: %lu", oldProtect);
-
-    patchData[0] = PATCH_BYTES_NEW[0]; // 0x90
-    patchData[1] = PATCH_BYTES_NEW[1]; // 0x90
-    DebugLogger::Log(DebugLogger::INFO, "PatchMultiplayerLobbyNew: Writing bytes [%02x, %02x] to %p",
-        patchData[0], patchData[1], patchAddr);
-    if (!WriteProcessMemory(hProcess, patchAddr, patchData, PATCH_SIZE_NEW, &bytesWritten)) {
-        DWORD error = GetLastError();
-        DebugLogger::Log(DebugLogger::CRITICAL, "PatchMultiplayerLobbyNew: WriteProcessMemory failed at %p, Error: %lu", patchAddr, error);
-        VirtualProtectEx(hProcess, patchAddr, PATCH_SIZE_NEW, oldProtect, &oldProtect);
-        return;
-    }
-    DebugLogger::Log(DebugLogger::INFO, "PatchMultiplayerLobbyNew: Successfully wrote %zu bytes to %p", bytesWritten, patchAddr);
-
-    DebugLogger::Log(DebugLogger::INFO, "PatchMultiplayerLobbyNew: Restoring original protection at %p", patchAddr);
-    if (!VirtualProtectEx(hProcess, patchAddr, PATCH_SIZE_NEW, oldProtect, &oldProtect)) {
-        DWORD error = GetLastError();
-        DebugLogger::Log(DebugLogger::WARNING, "PatchMultiplayerLobbyNew: Failed to restore protection at %p, Error: %lu", patchAddr, error);
+void PatchMultiplayerLobby(HANDLE hProcess, LPVOID patchAddr) {
+    DWORD oldProtect;
+    MEMORY_BASIC_INFORMATION mbi;
+    if (VirtualQueryEx(hProcess, patchAddr, &mbi, sizeof(mbi))) {
+        DebugLogger::Log(DebugLogger::INFO, "Current Memory Protection: %lu", mbi.Protect);
     }
     else {
-        DebugLogger::Log(DebugLogger::INFO, "PatchMultiplayerLobbyNew: Protection restored successfully");
+        DebugLogger::Log(DebugLogger::CRITICAL, "Failed to query memory protection.");
+        return;
     }
-
-    MessageBoxA(nullptr, "[+] Successfully patched multiplayer lobby!", "Success", MB_OK);
-    DebugLogger::Log(DebugLogger::INFO, "PatchMultiplayerLobbyNew: Patching completed successfully");
+    if (VirtualProtectEx(hProcess, patchAddr, PATCH_SIZE, PAGE_EXECUTE_READWRITE, &oldProtect)) {
+        BYTE patchBytes[] = PATCH_BYTES;
+        SIZE_T bytesWritten;
+        if (WriteProcessMemory(hProcess, patchAddr, patchBytes, sizeof(patchBytes), &bytesWritten)) {
+            if (!VirtualProtectEx(hProcess, patchAddr, PATCH_SIZE, oldProtect, &oldProtect)) {
+                DebugLogger::Log(DebugLogger::WARNING, "Failed to restore original memory protection.");
+            }
+            else {
+                MessageBoxA(nullptr, "[+] Successfully patched multiplayer lobby!", "Success", MB_OK);
+                return;
+            }
+        }
+        else {
+            DWORD dwError = GetLastError();
+            DebugLogger::Log(DebugLogger::CRITICAL, "Failed to write memory: %lu", dwError);
+        }
+    }
+    else {
+        DWORD dwError = GetLastError();
+        DebugLogger::Log(DebugLogger::CRITICAL, "Failed to change memory protection: %lu", dwError);
+    }
 }
+
+```cpp
+void PatchMultiplayerLobby(HANDLE hProcess, LPVOID patchAddr) {
+    DWORD oldProtect;
+    MEMORY_BASIC_INFORMATION mbi;
+    if (VirtualQueryEx(hProcess, patchAddr, &mbi, sizeof(mbi))) {
+        DebugLogger::Log(DebugLogger::INFO, "Current Memory Protection: %lu", mbi.Protect);
+    }
+    else {
+        DebugLogger::Log(DebugLogger::CRITICAL, "Failed to query memory protection.");
+        return;
+    }
+    if (VirtualProtectEx(hProcess, patchAddr, PATCH_SIZE, PAGE_EXECUTE_READWRITE, &oldProtect)) {
+        BYTE patchBytes[] = PATCH_BYTES;
+        SIZE_T bytesWritten;
+        if (WriteProcessMemory(hProcess, patchAddr, patchBytes, sizeof(patchBytes), &bytesWritten)) {
+            if (!VirtualProtectEx(hProcess, patchAddr, PATCH_SIZE, oldProtect, &oldProtect)) {
+                DebugLogger::Log(DebugLogger::WARNING, "Failed to restore original memory protection.");
+            }
+            else {
+                MessageBoxA(nullptr, "[+] Successfully patched multiplayer lobby!", "Success", MB_OK);
+                return;
+            }
+        }
+        else {
+            DWORD dwError = GetLastError();
+            DebugLogger::Log(DebugLogger::CRITICAL, "Failed to write memory: %lu", dwError);
+        }
+    }
+    else {
+        DWORD dwError = GetLastError();
+        DebugLogger::Log(DebugLogger::CRITICAL, "Failed to change memory protection: %lu", dwError);
+    }
+}
+```
+void PatchMultiplayerLobbylog() {
+    HANDLE hProcess = GetCurrentProcess();
+    if (!hProcess) {
+        MessageBoxA(nullptr, "[-] Failed to open process!", "Error", MB_ICONERROR);
+        return;
+    }
+    BYTE signature[] = PATCH_SIGNATURE;
+    DWORD_PTR patchAddr = FindPatchAddress(signature, sizeof(signature));
+    if (!patchAddr) {
+        MessageBoxA(nullptr, "[-] Could not find patch address!", "Error", MB_ICONERROR);
+        return;
+    }
+    MEMORY_BASIC_INFORMATION mbi;
+    if (VirtualQuery((LPCVOID)patchAddr, &mbi, sizeof(mbi)) == 0) {
+        MessageBoxA(nullptr, "[-] VirtualQuery() failed! Address is invalid.", "Error", MB_ICONERROR);
+        return;
+    }
+    DWORD oldProtect;
+    if (VirtualProtect((LPVOID)patchAddr, PATCH_SIZE, PAGE_EXECUTE_READWRITE, &oldProtect)) {
+        BYTE patchBytes[] = PATCH_BYTES;
+        SIZE_T bytesWritten;
+        if (WriteProcessMemory(hProcess, (LPVOID)patchAddr, patchBytes, sizeof(patchBytes), &bytesWritten)) {
+            VirtualProtect((LPVOID)patchAddr, PATCH_SIZE, oldProtect, &oldProtect);
+            MessageBoxA(nullptr, "[+] Successfully patched multiplayer lobby!", "Success", MB_OK);
+            return;
+        }
+    }
+    MessageBoxA(nullptr, "[-] Failed to patch memory!", "Error", MB_ICONERROR);
+}
+
 
 BYTE* FindPattern(BYTE* base, DWORD size, const BYTE* pattern, const char* mask) {
     DWORD patternLength = (DWORD)strlen(mask);
@@ -570,7 +619,7 @@ void RunPatch() {
         MessageBoxA(nullptr, "[-] Could not find patch address!", "Error", MB_ICONERROR);
         return;
     }
-    PatchMultiplayerLobbyNew(hProcess, (LPVOID)patchAddr); // Updated to call new function
+    PatchMultiplayerLobby(hProcess, (LPVOID)patchAddr);
 }
 
 bool PatchSoulstorm(const std::string& path) {
