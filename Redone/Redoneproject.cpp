@@ -1,4 +1,4 @@
-﻿#ifndef PCH_H
+#ifndef PCH_H
 #define PCH_H
 #define _WIN32_WINNT 0x0600
 #define WIN32_LEAN_AND_MEAN
@@ -641,14 +641,50 @@ bool PatchSoulstorm(const std::string& path) {
     return true;
 }
 
+std::wstring GetSoulstormPath() {
+    HKEY hKey;
+    const wchar_t* regPath = L"SOFTWARE\\WOW6432Node\\THQ\\Dawn of War - Soulstorm";
+    
+    if (RegOpenKeyExW(HKEY_LOCAL_MACHINE, regPath, 0, KEY_READ, &hKey) != ERROR_SUCCESS) {
+        throw std::runtime_error("Failed to open registry key for Soulstorm");
+    }
+    
+    wchar_t buffer[MAX_PATH];
+    DWORD bufferSize = sizeof(buffer);
+    DWORD type = REG_SZ;
+    
+    if (RegQueryValueExW(hKey, L"InstallLocation", 0, &type, (LPBYTE)buffer, &bufferSize) != ERROR_SUCCESS) {
+        RegCloseKey(hKey);
+        throw std::runtime_error("Failed to read InstallLocation from registry");
+    }
+    
+    RegCloseKey(hKey);
+    
+    std::wstring path = buffer;
+    if (!path.empty() && path.back() != L'\\') {
+        path += L'\\';
+    }
+    
+    // Verify the directory exists
+    if (GetFileAttributesW(path.c_str()) == INVALID_FILE_ATTRIBUTES) {
+        throw std::runtime_error("Soulstorm installation directory not found");
+    }
+    
+    return path;
+}
+
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
     DebugLogger::Init();
     DebugLogger::Log(DebugLogger::INFO, "WinMain started.");
+    
+    // Check admin privileges
     if (!IsRunningAsAdmin()) {
         DebugLogger::Log(DebugLogger::CRITICAL, "Not running as admin. Relaunching...");
         RelaunchAsAdmin();
         return 0;
     }
+
+    // Get user selected EXE
     std::string soulExe = PickSoulstormExe();
     if (soulExe.empty()) {
         DebugLogger::Log(DebugLogger::CRITICAL, "No EXE selected by user.");
@@ -656,15 +692,46 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
         return 1;
     }
     DebugLogger::Log(DebugLogger::INFO, "User selected EXE: %s", soulExe.c_str());
+
     try {
+        // Get Soulstorm installation path from registry and load DLL
+        DebugLogger::Log(DebugLogger::INFO, "Getting Soulstorm path from registry...");
+        std::wstring soulstormPath;
+        try {
+            soulstormPath = GetSoulstormPath();
+            DebugLogger::Log(DebugLogger::INFO, "Found Soulstorm installation path in registry");
+        }
+        catch (const std::exception& e) {
+            DebugLogger::Log(DebugLogger::CRITICAL, "Failed to get Soulstorm path: %s", e.what());
+            MessageBoxA(nullptr, "Failed to locate Soulstorm installation in registry.", "Error", MB_ICONERROR);
+            return 1;
+        }
+
+        // Construct and verify DLL path
+        const std::wstring gdiHookPath = soulstormPath + L"GDI HOOKING DLL.dll";
+        if (GetFileAttributesW(gdiHookPath.c_str()) == INVALID_FILE_ATTRIBUTES) {
+            DebugLogger::Log(DebugLogger::CRITICAL, "GDI HOOKING DLL.dll not found in Soulstorm directory");
+            MessageBoxA(nullptr, "GDI HOOKING DLL.dll not found in Soulstorm directory.", "Error", MB_ICONERROR);
+            return 1;
+        }
+
+        // Load the DLL
         DebugLogger::Log(DebugLogger::INFO, "Loading GDI Hooking DLL...");
-        const std::wstring gdiHookPath = L"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Dawn of War Soulstorm\\GDI HOOKING DLL.dll";
         DllHandle gdiHookDll = loadDll(gdiHookPath);
+        if (!gdiHookDll.get()) {
+            DebugLogger::Log(DebugLogger::CRITICAL, "Failed to load GDI HOOKING DLL");
+            MessageBoxA(nullptr, "Failed to load GDI HOOKING DLL.", "Error", MB_ICONERROR);
+            return 1;
+        }
+
+        // Apply patches
         if (!PatchSoulstorm(soulExe)) {
             DebugLogger::Log(DebugLogger::CRITICAL, "PatchSoulstorm failed.");
             MessageBoxA(nullptr, "Patch failed – multiplayer net-lobby might remain hidden.", "Patch Error", MB_ICONERROR);
             return 1;
         }
+
+        // Success message
         MessageBoxA(nullptr,
             "Soulstorm Patch Applied:\n\n"
             " - LAA enabled\n"
@@ -685,6 +752,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
         MessageBoxA(nullptr, "Unknown error occurred.", "Error", MB_ICONERROR);
         return 1;
     }
+
     DebugLogger::Cleanup();
     return 0;
 }
