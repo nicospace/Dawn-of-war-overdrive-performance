@@ -21,19 +21,13 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ThreadSafeQueue.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="RenderRequest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IATHooking.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GDIHookFunctions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SDLThread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dllmain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

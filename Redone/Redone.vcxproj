@@ -94,15 +94,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Libraries\SDL3-3.2.4\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Libraries\SDL3-3.2.4\include;C:\VulkanSDK\1.4.304.1\Include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL3.lib;User32.lib;Imagehlp.lib;gdi32.lib;</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Libraries\SDL3-3.2.4\lib\x86</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL3.lib;User32.lib;Imagehlp.lib;gdi32.lib;vulkan-1.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Libraries\SDL3-3.2.4\lib\x86;C:\VulkanSDK\1.4.304.1\Lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <!-- Compile & Link Settings for Debug | x64 -->
@@ -139,7 +139,6 @@
   <ItemGroup>
     <ClCompile Include="DebugLogger.cpp" />
     <ClCompile Include="DllUtils.cpp" />
-    <ClCompile Include="PatchLobby.cpp" />
     <ClCompile Include="Redoneproject.cpp" />
     <ClCompile Include="ZeroPEChecksum.cpp" />
   </ItemGroup>

@@ -1,10 +1,1167 @@
-﻿  pch.cpp
-  dllmain.cpp
-  IATHooking.cpp
+﻿  dllmain.cpp
+  Note: including file: C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\d3d9.h
+  Note: including file:  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\stdlib.h
+  Note: including file:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_malloc.h
+  Note: including file:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_search.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\stddef.h
+  Note: including file:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_wstdlib.h
+  Note: including file:   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\limits.h
+  Note: including file:  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\objbase.h
+  Note: including file:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\rpc.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\rpcdce.h
+  Note: including file:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\rpcdcep.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\rpcnsi.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\rpcnterr.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\rpcasync.h
+  Note: including file:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\rpcndr.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\pshpack8.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\rpcnsip.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\rpcsal.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\poppack.h
+  Note: including file:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\pshpack8.h
+  Note: including file:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\combaseapi.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\pshpack8.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\wtypesbase.h
+  Note: including file:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\guiddef.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\unknwnbase.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\objidlbase.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\guiddef.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\cguid.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\poppack.h
+  Note: including file:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\coml2api.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\objidl.h
+  Note: including file:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\unknwn.h
+  Note: including file:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\wtypes.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\propidlbase.h
+  Note: including file:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\oaidl.h
+  Note: including file:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\urlmon.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\oleidl.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\servprov.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\msxml.h
+  Note: including file:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\propidl.h
+  Note: including file:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\poppack.h
+  Note: including file:  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\d3d9types.h
+  Note: including file:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\float.h
+  Note: including file:  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\d3d9caps.h
+  Note: including file: C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\stdio.h
+  Note: including file:  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_wstdio.h
+  Note: including file:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_stdio_config.h
+  Note: including file: C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\SDLThread.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_stdinc.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_platform_defines.h
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\stdint.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\wchar.h
+  Note: including file:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_wconio.h
+  Note: including file:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_wdirect.h
+  Note: including file:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_wio.h
+  Note: including file:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_share.h
+  Note: including file:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_wprocess.h
+  Note: including file:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_wtime.h
+  Note: including file:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\sys/stat.h
+  Note: including file:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\sys/types.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\malloc.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_assert.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_asyncio.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_atomic.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_audio.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_endian.h
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\intrin.h
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\intrin0.inl.h
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\setjmp.h
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\immintrin.h
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\wmmintrin.h
+  Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\nmmintrin.h
+  Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\smmintrin.h
+  Note: including file:          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\tmmintrin.h
+  Note: including file:           C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\pmmintrin.h
+  Note: including file:            C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\emmintrin.h
+  Note: including file:             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmmintrin.h
+  Note: including file:              C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\mmintrin.h
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\zmmintrin.h
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\ammintrin.h
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\mm3dnow.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_error.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_mutex.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_thread.h
+  Note: including file:      C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_properties.h
+  Note: including file:       C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:       C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\process.h
+  Note: including file:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_startup.h
+  Note: including file:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\math.h
+  Note: including file:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_math.h
+  Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vcruntime_startup.h
+  Note: including file:      C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:      C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_iostream.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_bits.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_blendmode.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_camera.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_pixels.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_surface.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_rect.h
+  Note: including file:      C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:      C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_clipboard.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_cpuinfo.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_dialog.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_video.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_events.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_gamepad.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_guid.h
+  Note: including file:      C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:      C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_joystick.h
+  Note: including file:      C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_power.h
+  Note: including file:       C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:       C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:      C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_sensor.h
+  Note: including file:       C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:       C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:      C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:      C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_keyboard.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_keycode.h
+  Note: including file:      C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_scancode.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_mouse.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_pen.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_touch.h
+  Note: including file:      C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:      C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_filesystem.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_gpu.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_haptic.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_hidapi.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_hints.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_init.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_loadso.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_locale.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_log.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_messagebox.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_metal.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_misc.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_platform.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_process.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_render.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_storage.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_system.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_time.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_timer.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_tray.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_version.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_oldnames.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_vulkan.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\VulkanSDK\1.4.304.1\Include\vulkan/vulkan.h
+  Note: including file:   C:\VulkanSDK\1.4.304.1\Include\vulkan\vk_platform.h
+  Note: including file:   C:\VulkanSDK\1.4.304.1\Include\vulkan\vulkan_core.h
+  Note: including file:    C:\VulkanSDK\1.4.304.1\Include\vk_video/vulkan_video_codec_h264std.h
+  Note: including file:     C:\VulkanSDK\1.4.304.1\Include\vk_video\vulkan_video_codecs_common.h
+  Note: including file:    C:\VulkanSDK\1.4.304.1\Include\vk_video/vulkan_video_codec_h264std_encode.h
+  Note: including file:    C:\VulkanSDK\1.4.304.1\Include\vk_video/vulkan_video_codec_h265std.h
+  Note: including file:    C:\VulkanSDK\1.4.304.1\Include\vk_video/vulkan_video_codec_h265std_encode.h
+  Note: including file:    C:\VulkanSDK\1.4.304.1\Include\vk_video/vulkan_video_codec_h264std_decode.h
+  Note: including file:    C:\VulkanSDK\1.4.304.1\Include\vk_video/vulkan_video_codec_h265std_decode.h
+  Note: including file:    C:\VulkanSDK\1.4.304.1\Include\vk_video/vulkan_video_codec_av1std.h
+  Note: including file:    C:\VulkanSDK\1.4.304.1\Include\vk_video/vulkan_video_codec_av1std_decode.h
+  Note: including file:    C:\VulkanSDK\1.4.304.1\Include\vk_video/vulkan_video_codec_av1std_encode.h
+  Note: including file:  C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\ThreadSafeQueue.h
+  Note: including file:   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\queue
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\yvals_core.h
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xkeycheck.h
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\__msvc_heap_algorithms.hpp
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xutility
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\yvals.h
+  Note: including file:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\crtdbg.h
+  Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vcruntime_new_debug.h
+  Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vcruntime_new.h
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\crtdefs.h
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\use_ansi.h
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\__msvc_iter_core.hpp
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\utility
+  Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\initializer_list
+  Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\cstddef
+  Note: including file:          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xtr1common
+  Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\type_traits
+  Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\cstdint
+  Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\cstring
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\climits
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\cstdlib
+  Note: including file:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\math.h
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\cwchar
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\cstdio
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\deque
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmemory
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\limits
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\cfloat
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\intrin0.h
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\new
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\exception
+  Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vcruntime_exception.h
+  Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\eh.h
+  Note: including file:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_terminate.h
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xatomic.h
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\__msvc_bit_utils.hpp
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\__msvc_sanitizer_annotate_container.hpp
+  Note: including file:   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\mutex
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\__msvc_chrono.hpp
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\ctime
+  Note: including file:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\time.h
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\ratio
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xtimec.h
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\system_error
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\__msvc_system_error_abi.hpp
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\cerrno
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\stdexcept
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\__msvc_string_view.hpp
+  Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\iosfwd
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xcall_once.h
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xerrc.h
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\atomic
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xthreads.h
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\__msvc_threads_core.hpp
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\thread
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\typeinfo
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vcruntime_typeinfo.h
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\tuple
+  Note: including file:   C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\RenderRequest.h
+  Note: including file: C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\IATHooking.h
+  Note: including file:  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h
+  Note: including file:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\pshpack8.h
+  Note: including file:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\wintrust.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\wincrypt.h
+  Note: including file:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\bcrypt.h
+  Note: including file:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ncrypt.h
+  Note: including file:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dpapi.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\pshpack8.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\poppack.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\pshpack8.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\poppack.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\pshpack8.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\poppack.h
+  Note: including file:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\poppack.h
+  Note: including file:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\minidumpapiset.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\pshpack4.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\poppack.h
+  Note: including file: C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h
+  Note: including file:  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\pshpack8.h
   SDLThread.cpp
-     Creating library C:\Users\n\Documents\Output directory\GDI AND RENDER\GDI HOOKING DLL.lib and object C:\Users\n\Documents\Output directory\GDI AND RENDER\GDI HOOKING DLL.exp
-  Generating code
-  Previous IPDB not found, fall back to full compilation.
-  All 96 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Finished generating code
-  GDI HOOKING DLL.vcxproj -> C:\Users\n\Documents\Output directory\GDI AND RENDER\GDI HOOKING DLL.dll
+C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\dllmain.cpp(181,10): error C2660: 'SDL_Vulkan_GetInstanceExtensions': function does not take 3 arguments
+  Note: including file: C:\Libraries\SDL3-3.2.4\include\SDL3/SDL.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_stdinc.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_platform_defines.h
+  (compiling source file '/dllmain.cpp')
+      C:\Libraries\SDL3-3.2.4\include\SDL3\SDL_vulkan.h(200,50):
+      see declaration of 'SDL_Vulkan_GetInstanceExtensions'
+      C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\dllmain.cpp(181,10):
+      while trying to match the argument list '(SDL_Window *, unsigned int *, nullptr)'
+  
+C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\dllmain.cpp(187,10): error C2660: 'SDL_Vulkan_GetInstanceExtensions': function does not take 3 arguments
+  (compiling source file '/dllmain.cpp')
+      C:\Libraries\SDL3-3.2.4\include\SDL3\SDL_vulkan.h(200,50):
+      see declaration of 'SDL_Vulkan_GetInstanceExtensions'
+      C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\dllmain.cpp(187,10):
+      while trying to match the argument list '(SDL_Window *, unsigned int *, _Ty *)'
+          with
+          [
+              _Ty=const char *
+          ]
+  
+C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\dllmain.cpp(207,10): error C2660: 'SDL_Vulkan_CreateSurface': function does not take 3 arguments
+  (compiling source file '/dllmain.cpp')
+      C:\Libraries\SDL3-3.2.4\include\SDL3\SDL_vulkan.h(226,34):
+      see declaration of 'SDL_Vulkan_CreateSurface'
+      C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\dllmain.cpp(207,10):
+      while trying to match the argument list '(SDL_Window *, VkInstance, VkSurfaceKHR *)'
+  
+C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\dllmain.cpp(289,17): warning C4804: '<': unsafe use of type 'bool' in operation
+  (compiling source file '/dllmain.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(90,16): error C2011: '_LOADED_IMAGE': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(93,16):
+      see declaration of '_LOADED_IMAGE'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(345,16): error C2011: '_IMAGE_DEBUG_INFORMATION': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(677,16):
+      see declaration of '_IMAGE_DEBUG_INFORMATION'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(524,16): error C2011: '_MODLOAD_DATA': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(856,16):
+      see declaration of '_MODLOAD_DATA'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(538,16): error C2011: '_MODLOAD_CVMISC': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(870,16):
+      see declaration of '_MODLOAD_CVMISC'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(547,16): error C2011: '_MODLOAD_PDBGUID_PDBAGE': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(879,16):
+      see declaration of '_MODLOAD_PDBGUID_PDBAGE'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(563,5): error C2365: 'AddrMode1616': redefinition; previous definition was 'enumerator'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(895,5):
+      see declaration of 'AddrMode1616'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(564,5): error C2365: 'AddrMode1632': redefinition; previous definition was 'enumerator'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(896,5):
+      see declaration of 'AddrMode1632'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(565,5): error C2365: 'AddrModeReal': redefinition; previous definition was 'enumerator'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(897,5):
+      see declaration of 'AddrModeReal'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(566,5): error C2365: 'AddrModeFlat': redefinition; previous definition was 'enumerator'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(898,5):
+      see declaration of 'AddrModeFlat'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(567,3): error C2371: 'ADDRESS_MODE': redefinition; different basic types
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(899,3):
+      see declaration of 'ADDRESS_MODE'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(569,16): error C2011: '_tagADDRESS64': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(901,16):
+      see declaration of '_tagADDRESS64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(585,16): error C2011: '_tagADDRESS': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(917,16):
+      see declaration of '_tagADDRESS'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(593,1): error C2084: function 'void Address32To64(LPADDRESS,LPADDRESS64)' already has a body
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(925,1):
+      see previous definition of 'Address32To64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(598,5): error C2027: use of undefined type '_tagADDRESS64'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(901,16):
+      see declaration of '_tagADDRESS64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(598,42): error C2027: use of undefined type '_tagADDRESS'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(917,16):
+      see declaration of '_tagADDRESS'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(599,5): error C2027: use of undefined type '_tagADDRESS64'
+  Note: including file:   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\stdint.h
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(901,16):
+      see declaration of '_tagADDRESS64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(599,20): error C2027: use of undefined type '_tagADDRESS'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(917,16):
+      see declaration of '_tagADDRESS'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(600,5): error C2027: use of undefined type '_tagADDRESS64'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(901,16):
+      see declaration of '_tagADDRESS64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(600,17): error C2027: use of undefined type '_tagADDRESS'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(917,16):
+      see declaration of '_tagADDRESS'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(605,1): error C2084: function 'void Address64To32(LPADDRESS64,LPADDRESS)' already has a body
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(937,1):
+      see previous definition of 'Address64To32'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(610,5): error C2027: use of undefined type '_tagADDRESS'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(917,16):
+      see declaration of '_tagADDRESS'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(610,26): error C2027: use of undefined type '_tagADDRESS64'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(901,16):
+      see declaration of '_tagADDRESS64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(611,5): error C2027: use of undefined type '_tagADDRESS'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(917,16):
+      see declaration of '_tagADDRESS'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(611,20): error C2027: use of undefined type '_tagADDRESS64'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(901,16):
+      see declaration of '_tagADDRESS64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(612,5): error C2027: use of undefined type '_tagADDRESS'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(917,16):
+      see declaration of '_tagADDRESS'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(612,17): error C2027: use of undefined type '_tagADDRESS64'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(901,16):
+      see declaration of '_tagADDRESS64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(633,16): error C2011: '_KDHELP64': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(965,16):
+      see declaration of '_KDHELP64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(706,16): error C2011: '_KDHELP': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1038,16):
+      see declaration of '_KDHELP'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(774,1): error C2084: function 'void KdHelp32To64(PKDHELP,PKDHELP64)' already has a body
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1106,1):
+      see previous definition of 'KdHelp32To64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(779,5): error C2027: use of undefined type '_KDHELP64'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(965,16):
+      see declaration of '_KDHELP64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(779,19): error C2027: use of undefined type '_KDHELP'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1038,16):
+      see declaration of '_KDHELP'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(780,5): error C2027: use of undefined type '_KDHELP64'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(965,16):
+      see declaration of '_KDHELP64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(780,28): error C2027: use of undefined type '_KDHELP'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1038,16):
+      see declaration of '_KDHELP'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(781,5): error C2027: use of undefined type '_KDHELP64'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(965,16):
+      see declaration of '_KDHELP64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(781,25): error C2027: use of undefined type '_KDHELP'
+  Note: including file:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\wchar.h
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1038,16):
+      see declaration of '_KDHELP'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(782,5): error C2027: use of undefined type '_KDHELP64'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(965,16):
+      see declaration of '_KDHELP64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(782,25): error C2027: use of undefined type '_KDHELP'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1038,16):
+      see declaration of '_KDHELP'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(783,5): error C2027: use of undefined type '_KDHELP64'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(965,16):
+      see declaration of '_KDHELP64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(783,27): error C2027: use of undefined type '_KDHELP'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1038,16):
+      see declaration of '_KDHELP'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(784,5): error C2027: use of undefined type '_KDHELP64'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(965,16):
+      see declaration of '_KDHELP64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(784,37): error C2027: use of undefined type '_KDHELP'
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_wconio.h
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1038,16):
+      see declaration of '_KDHELP'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(785,5): error C2027: use of undefined type '_KDHELP64'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(965,16):
+      see declaration of '_KDHELP64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(785,29): error C2027: use of undefined type '_KDHELP'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1038,16):
+      see declaration of '_KDHELP'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(786,5): error C2027: use of undefined type '_KDHELP64'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(965,16):
+      see declaration of '_KDHELP64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(786,38): error C2027: use of undefined type '_KDHELP'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1038,16):
+      see declaration of '_KDHELP'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(787,5): error C2027: use of undefined type '_KDHELP64'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(965,16):
+      see declaration of '_KDHELP64'
+  
+  Note: including file:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_stdio_config.h
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(787,22): error C2027: use of undefined type '_KDHELP'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1038,16):
+      see declaration of '_KDHELP'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(788,5): error C2027: use of undefined type '_KDHELP64'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(965,16):
+      see declaration of '_KDHELP64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(788,23): error C2027: use of undefined type '_KDHELP'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1038,16):
+      see declaration of '_KDHELP'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(798,16): error C2011: '_tagSTACKFRAME64': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1130,16):
+      see declaration of '_tagSTACKFRAME64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(821,16): error C2011: '_tagSTACKFRAME_EX': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1153,16):
+      see declaration of '_tagSTACKFRAME_EX'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(844,16): error C2011: '_tagSTACKFRAME': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1176,16):
+      see declaration of '_tagSTACKFRAME'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1039,16): error C2011: 'API_VERSION': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1371,16):
+      see declaration of 'API_VERSION'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1295,5): error C2365: 'SymNone': redefinition; previous definition was 'enumerator'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1627,5):
+      see declaration of 'SymNone'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1296,5): error C2365: 'SymCoff': redefinition; previous definition was 'enumerator'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1628,5):
+      see declaration of 'SymCoff'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1297,5): error C2365: 'SymCv': redefinition; previous definition was 'enumerator'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1629,5):
+      see declaration of 'SymCv'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1298,5): error C2365: 'SymPdb': redefinition; previous definition was 'enumerator'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1630,5):
+      see declaration of 'SymPdb'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1299,5): error C2365: 'SymExport': redefinition; previous definition was 'enumerator'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1631,5):
+      see declaration of 'SymExport'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1300,5): error C2365: 'SymDeferred': redefinition; previous definition was 'enumerator'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1632,5):
+      see declaration of 'SymDeferred'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1301,5): error C2365: 'SymSym': redefinition; previous definition was 'enumerator'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1633,5):
+      see declaration of 'SymSym'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1302,5): error C2365: 'SymDia': redefinition; previous definition was 'enumerator'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1634,5):
+      see declaration of 'SymDia'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1303,5): error C2365: 'SymVirtual': redefinition; previous definition was 'enumerator'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1635,5):
+      see declaration of 'SymVirtual'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1304,5): error C2365: 'NumSymTypes': redefinition; previous definition was 'enumerator'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1636,5):
+      see declaration of 'NumSymTypes'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1305,3): error C2371: 'SYM_TYPE': redefinition; different basic types
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1637,3):
+      see declaration of 'SYM_TYPE'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1311,16): error C2011: '_IMAGEHLP_SYMBOL64': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1643,16):
+      see declaration of '_IMAGEHLP_SYMBOL64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1320,16): error C2011: '_IMAGEHLP_SYMBOL64_PACKAGE': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1652,16):
+      see declaration of '_IMAGEHLP_SYMBOL64_PACKAGE'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1325,16): error C2011: '_IMAGEHLP_SYMBOLW64': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1657,16):
+      see declaration of '_IMAGEHLP_SYMBOLW64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1334,16): error C2011: '_IMAGEHLP_SYMBOLW64_PACKAGE': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1666,16):
+      see declaration of '_IMAGEHLP_SYMBOLW64_PACKAGE'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1352,17): error C2011: '_IMAGEHLP_SYMBOL': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1684,17):
+      see declaration of '_IMAGEHLP_SYMBOL'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1361,17): error C2011: '_IMAGEHLP_SYMBOL_PACKAGE': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1693,17):
+      see declaration of '_IMAGEHLP_SYMBOL_PACKAGE'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1366,17): error C2011: '_IMAGEHLP_SYMBOLW': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1698,17):
+      see declaration of '_IMAGEHLP_SYMBOLW'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1375,17): error C2011: '_IMAGEHLP_SYMBOLW_PACKAGE': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1707,17):
+      see declaration of '_IMAGEHLP_SYMBOLW_PACKAGE'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1390,16): error C2011: '_IMAGEHLP_MODULE64': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1722,16):
+      see declaration of '_IMAGEHLP_MODULE64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1422,16): error C2011: '_IMAGEHLP_MODULE64_EX': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1754,16):
+      see declaration of '_IMAGEHLP_MODULE64_EX'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1431,16): error C2011: '_IMAGEHLP_MODULEW64': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1763,16):
+      see declaration of '_IMAGEHLP_MODULEW64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1463,16): error C2011: '_IMAGEHLP_MODULEW64_EX': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1795,16):
+      see declaration of '_IMAGEHLP_MODULEW64_EX'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1482,16): error C2011: '_IMAGEHLP_MODULE': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1814,16):
+      see declaration of '_IMAGEHLP_MODULE'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1495,16): error C2011: '_IMAGEHLP_MODULEW': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1827,16):
+      see declaration of '_IMAGEHLP_MODULEW'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1513,16): error C2011: '_IMAGEHLP_LINE64': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1845,16):
+      see declaration of '_IMAGEHLP_LINE64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1521,16): error C2011: '_IMAGEHLP_LINEW64': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1853,16):
+      see declaration of '_IMAGEHLP_LINEW64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1533,16): error C2011: '_IMAGEHLP_LINE': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1865,16):
+      see declaration of '_IMAGEHLP_LINE'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1541,16): error C2011: '_IMAGEHLP_LINEW': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1873,16):
+      see declaration of '_IMAGEHLP_LINEW'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1560,16): error C2011: '_SOURCEFILE': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1892,16):
+      see declaration of '_SOURCEFILE'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1565,16): error C2011: '_SOURCEFILEW': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1897,16):
+      see declaration of '_SOURCEFILEW'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1595,16): error C2011: '_IMAGEHLP_CBA_READ_MEMORY': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1927,16):
+      see declaration of '_IMAGEHLP_CBA_READ_MEMORY'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1603,5): error C2365: 'sevInfo': redefinition; previous definition was 'enumerator'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1935,5):
+      see declaration of 'sevInfo'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1604,5): error C2365: 'sevProblem': redefinition; previous definition was 'enumerator'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1936,5):
+      see declaration of 'sevProblem'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1605,5): error C2365: 'sevAttn': redefinition; previous definition was 'enumerator'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1937,5):
+      see declaration of 'sevAttn'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1606,5): error C2365: 'sevFatal': redefinition; previous definition was 'enumerator'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1938,5):
+      see declaration of 'sevFatal'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1607,5): error C2365: 'sevMax': redefinition; previous definition was 'enumerator'
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1939,5):
+      see declaration of 'sevMax'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1614,16): error C2011: '_IMAGEHLP_CBA_EVENT': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1946,16):
+      see declaration of '_IMAGEHLP_CBA_EVENT'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1621,16): error C2011: '_IMAGEHLP_CBA_EVENTW': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1953,16):
+      see declaration of '_IMAGEHLP_CBA_EVENTW'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1628,16): error C2011: '_IMAGEHLP_DEFERRED_SYMBOL_LOAD64': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1960,16):
+      see declaration of '_IMAGEHLP_DEFERRED_SYMBOL_LOAD64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1639,16): error C2011: '_IMAGEHLP_DEFERRED_SYMBOL_LOADW64': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1971,16):
+      see declaration of '_IMAGEHLP_DEFERRED_SYMBOL_LOADW64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1661,16): error C2011: '_IMAGEHLP_DEFERRED_SYMBOL_LOAD': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(1993,16):
+      see declaration of '_IMAGEHLP_DEFERRED_SYMBOL_LOAD'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1672,16): error C2011: '_IMAGEHLP_DUPLICATE_SYMBOL64': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(2004,16):
+      see declaration of '_IMAGEHLP_DUPLICATE_SYMBOL64'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1683,16): error C2011: '_IMAGEHLP_DUPLICATE_SYMBOL': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(2015,16):
+      see declaration of '_IMAGEHLP_DUPLICATE_SYMBOL'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1691,16): error C2011: '_IMAGEHLP_JIT_SYMBOL_MAP': 'struct' type redefinition
+  (compiling source file '/dllmain.cpp')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\ImageHlp.h(2023,16):
+      see declaration of '_IMAGEHLP_JIT_SYMBOL_MAP'
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dbghelp.h(1691,16): error C1003: error count exceeds 100; stopping compilation
+  (compiling source file '/dllmain.cpp')
+  
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_wdirect.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_wio.h
+  Note: including file:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_share.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_wprocess.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_wstdio.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_wstdlib.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_wtime.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\sys/stat.h
+  Note: including file:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\sys/types.h
+  Note: including file:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\malloc.h
+  Note: including file:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_malloc.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_assert.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_asyncio.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_atomic.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_audio.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_endian.h
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\intrin.h
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\intrin0.inl.h
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\setjmp.h
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\immintrin.h
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\wmmintrin.h
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\nmmintrin.h
+  Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\smmintrin.h
+  Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\tmmintrin.h
+  Note: including file:          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\pmmintrin.h
+  Note: including file:           C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\emmintrin.h
+  Note: including file:            C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmmintrin.h
+  Note: including file:             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\mmintrin.h
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\zmmintrin.h
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\ammintrin.h
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\mm3dnow.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_error.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_mutex.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_thread.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_properties.h
+  Note: including file:      C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:      C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\process.h
+  Note: including file:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_startup.h
+  Note: including file:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\math.h
+  Note: including file:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_math.h
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vcruntime_startup.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_iostream.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_bits.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_blendmode.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_camera.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_pixels.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_surface.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_rect.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_clipboard.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_cpuinfo.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_dialog.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_video.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_events.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_gamepad.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_guid.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_joystick.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_power.h
+  Note: including file:      C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:      C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_sensor.h
+  Note: including file:      C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:      C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_keyboard.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_keycode.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_scancode.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_mouse.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_pen.h
+  Note: including file:    C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_touch.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:     C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_filesystem.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_gpu.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_haptic.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_hidapi.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_hints.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_init.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_loadso.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_locale.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_log.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_messagebox.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_metal.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_misc.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_platform.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_process.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_render.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_storage.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_system.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_time.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_timer.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_tray.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_version.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:   C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_oldnames.h
+  Note: including file: C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_vulkan.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_begin_code.h
+  Note: including file:  C:\Libraries\SDL3-3.2.4\include\SDL3/SDL_close_code.h
+  Note: including file: C:\VulkanSDK\1.4.304.1\Include\vulkan/vulkan.h
+  Note: including file:  C:\VulkanSDK\1.4.304.1\Include\vulkan\vk_platform.h
+  Note: including file:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\stddef.h
+  Note: including file:  C:\VulkanSDK\1.4.304.1\Include\vulkan\vulkan_core.h
+  Note: including file:   C:\VulkanSDK\1.4.304.1\Include\vk_video/vulkan_video_codec_h264std.h
+  Note: including file:    C:\VulkanSDK\1.4.304.1\Include\vk_video\vulkan_video_codecs_common.h
+  Note: including file:   C:\VulkanSDK\1.4.304.1\Include\vk_video/vulkan_video_codec_h264std_encode.h
+  Note: including file:   C:\VulkanSDK\1.4.304.1\Include\vk_video/vulkan_video_codec_h265std.h
+  Note: including file:   C:\VulkanSDK\1.4.304.1\Include\vk_video/vulkan_video_codec_h265std_encode.h
+  Note: including file:   C:\VulkanSDK\1.4.304.1\Include\vk_video/vulkan_video_codec_h264std_decode.h
+  Note: including file:   C:\VulkanSDK\1.4.304.1\Include\vk_video/vulkan_video_codec_h265std_decode.h
+  Note: including file:   C:\VulkanSDK\1.4.304.1\Include\vk_video/vulkan_video_codec_av1std.h
+  Note: including file:   C:\VulkanSDK\1.4.304.1\Include\vk_video/vulkan_video_codec_av1std_decode.h
+  Note: including file:   C:\VulkanSDK\1.4.304.1\Include\vk_video/vulkan_video_codec_av1std_encode.h
+  Note: including file: C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\ThreadSafeQueue.h
+  Note: including file:  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\queue
+  Note: including file:   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\yvals_core.h
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xkeycheck.h
+  Note: including file:   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\__msvc_heap_algorithms.hpp
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xutility
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\yvals.h
+  Note: including file:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\crtdbg.h
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vcruntime_new_debug.h
+  Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vcruntime_new.h
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\crtdefs.h
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\use_ansi.h
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\__msvc_iter_core.hpp
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\utility
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\initializer_list
+  Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\cstddef
+  Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xtr1common
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\type_traits
+  Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\cstdint
+  Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\cstring
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\climits
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\limits.h
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\cstdlib
+  Note: including file:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\math.h
+  Note: including file:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\stdlib.h
+  Note: including file:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_search.h
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\cwchar
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\cstdio
+  Note: including file:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\stdio.h
+  Note: including file:   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\deque
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xmemory
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\limits
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\cfloat
+  Note: including file:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\float.h
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\intrin0.h
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\new
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\exception
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vcruntime_exception.h
+  Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\eh.h
+  Note: including file:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_terminate.h
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xatomic.h
+  Note: including file:   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vector
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\__msvc_bit_utils.hpp
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\__msvc_sanitizer_annotate_container.hpp
+  Note: including file:  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\mutex
+  Note: including file:   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\__msvc_chrono.hpp
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\ctime
+  Note: including file:     C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\time.h
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\ratio
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xtimec.h
+  Note: including file:   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\system_error
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\__msvc_system_error_abi.hpp
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\cerrno
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\stdexcept
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\__msvc_string_view.hpp
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\iosfwd
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xcall_once.h
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xerrc.h
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\atomic
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xthreads.h
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\__msvc_threads_core.hpp
+  Note: including file:   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\thread
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\typeinfo
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\vcruntime_typeinfo.h
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\tuple
+  Note: including file:  C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\RenderRequest.h
+  Note: including file: C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\SDLThread.h
+C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\SDLThread.cpp(41,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file '/SDLThread.cpp')
+  
+C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\SDLThread.cpp(41,26): error C2146: syntax error: missing ';' before identifier 'g_VulkanContext'
+  (compiling source file '/SDLThread.cpp')
+  
+C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\SDLThread.cpp(41,26): error C2065: 'g_VulkanContext': undeclared identifier
+  (compiling source file '/SDLThread.cpp')
+  
+C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\SDLThread.cpp(42,19): error C2065: 'g_VulkanContext': undeclared identifier
+  (compiling source file '/SDLThread.cpp')
+  
+C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\SDLThread.cpp(43,18): error C2065: 'g_VulkanContext': undeclared identifier
+  (compiling source file '/SDLThread.cpp')
+  
+C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\SDLThread.cpp(44,25): error C2065: 'g_VulkanContext': undeclared identifier
+  (compiling source file '/SDLThread.cpp')
+  
+C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\SDLThread.cpp(45,17): error C2065: 'g_VulkanContext': undeclared identifier
+  (compiling source file '/SDLThread.cpp')
+  
+C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\SDLThread.cpp(46,24): error C2065: 'g_VulkanContext': undeclared identifier
+  (compiling source file '/SDLThread.cpp')
+  
+C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\GDI HOOKING DLL\SDLThread.cpp(70,5): error C3861: 'CleanupVulkan': identifier not found
+  (compiling source file '/SDLThread.cpp')
+  

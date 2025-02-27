@@ -106,7 +106,9 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Libraries\SDL3-3.2.4\include;C:\Users\n\Documents\Project ccai\Redone\Github source\GDI HOOKING DLL;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Libraries\SDL3-3.2.4\include;C:\Users\n\Documents\Project ccai\Redone\Github source\GDI HOOKING DLL;C:\VulkanSDK\1.4.304.1\Include;</AdditionalIncludeDirectories>
+      <AdditionalOptions>/showIncludes
+ %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -114,9 +116,12 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalLibraryDirectories>C:\Libraries\SDL3-3.2.4\lib\x86</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL3.lib;User32.lib;Imagehlp.lib;gdi32.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Libraries\SDL3-3.2.4\lib\x86;C:\VulkanSDK\1.4.304.1\Lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL3.lib;User32.lib;Imagehlp.lib;gdi32.lib;vulkan-1.lib;</AdditionalDependencies>
     </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -153,13 +158,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="dllmain.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="GDIHookFunctions.h" />
-    <ClInclude Include="IATHooking.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="RenderRequest.h" />
     <ClInclude Include="SDLThread.h" />
-    <ClInclude Include="ThreadSafeQueue.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />

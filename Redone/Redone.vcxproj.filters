@@ -24,9 +24,6 @@
     <ClCompile Include="ZeroPEChecksum.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PatchLobby.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="DllUtils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
