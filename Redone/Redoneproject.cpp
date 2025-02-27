@@ -27,6 +27,9 @@
 #include <array>
 #include <atomic>
 #include "ZeroPEChecksum.h"
+#include <SDL3/SDL.h>
+#include <cstddef>  // For size_t
+
 #pragma comment(lib, "advapi32.lib")
 #pragma comment(lib, "user32.lib")
 #pragma comment(lib, "shell32.lib")
@@ -37,128 +40,41 @@
 #pragma comment(linker, "/SECTION:.injsec,RWE")
 #endif
 
-#pragma section(".injsec", read, execute, shared)
-__declspec(allocate(".injsec")) char dummyInjSec = 0;
 
-class DebugLogger {
-private:
-    static const int LOG_BUFFER_SIZE = 1024;
-    static const char* LOG_FILE_NAME;
-    static FILE* logFile;
-public:
-    enum LogLevel { INFO, WARNING, CRITICAL };
-    static void Init(const char* fileName = nullptr);
-    static void Log(LogLevel level, const char* fmt, ...);
-    static void Cleanup();
-};
+#include "pch.h"
 
-const char* DebugLogger::LOG_FILE_NAME = nullptr;
-FILE* DebugLogger::logFile = nullptr;
+// Section definition from your pch.h
 
-void DebugLogger::Init(const char* fileName) {
-    static char temp[256];
-    if (fileName) LOG_FILE_NAME = fileName;
-    else {
-        SYSTEMTIME st;
-        GetSystemTime(&st);
-        sprintf_s(temp, "patch_debug_%04d%02d%02d_%02d%02d%02d.log",
-            st.wYear, st.wMonth, st.wDay, st.wHour, st.wMinute, st.wSecond);
-        LOG_FILE_NAME = temp;
-    }
-    fopen_s(&logFile, LOG_FILE_NAME, "w+");
-    if (logFile) Log(CRITICAL, "=== Starting debug session ===");
-}
 
-void DebugLogger::Log(LogLevel level, const char* fmt, ...) {
-    if (!logFile) return;
-    va_list args;
-    va_start(args, fmt);
-    char buffer[LOG_BUFFER_SIZE];
-    vsnprintf_s(buffer, LOG_BUFFER_SIZE, _TRUNCATE, fmt, args);
-    const char* levelStr = "";
-    switch (level) {
-    case INFO: levelStr = "INFO"; break;
-    case WARNING: levelStr = "WARN"; break;
-    case CRITICAL: levelStr = "CRIT"; break;
-    }
-    fprintf(logFile, "[%s] %s\n", levelStr, buffer);
-    fflush(logFile);
-    va_end(args);
-}
+#include "pch.h"
+#include "DebugLogger.h"
+#include "DllUtils.h"
 
-void DebugLogger::Cleanup() {
-    if (logFile) {
-        fclose(logFile);
-        logFile = nullptr;
-    }
-}
-
-class DllError : public std::exception {
-    DWORD errorCode;
-    std::string message;
-public:
-    DllError(DWORD code, const std::string& msg) : errorCode(code), message(msg) {}
-    const char* what() const noexcept override { return message.c_str(); }
-};
-
-class DllHandle {
-public:
-    DllHandle() : handle_(nullptr) {}
-    explicit DllHandle(HMODULE handle) : handle_(handle) {}
-    ~DllHandle() { if (handle_) FreeLibrary(handle_); }
-    DllHandle(const DllHandle&) = delete;
-    DllHandle& operator=(const DllHandle&) = delete;
-    DllHandle(DllHandle&& other) noexcept : handle_(other.handle_) { other.handle_ = nullptr; }
-    DllHandle& operator=(DllHandle&& other) noexcept {
-        if (this != &other) {
-            if (handle_) FreeLibrary(handle_);
-            handle_ = other.handle_;
-            other.handle_ = nullptr;
-        }
-        return *this;
-    }
-    operator HMODULE() const { return handle_; }
-    HMODULE get() const { return handle_; }
-private:
-    HMODULE handle_;
-};
-
-DllHandle loadDll(const std::wstring& path) {
-    HMODULE handle = GetModuleHandleW(path.c_str());
-    if (handle) return DllHandle(handle);
-    DWORD dwAttrib = GetFileAttributesW(path.c_str());
-    if (dwAttrib == INVALID_FILE_ATTRIBUTES || (dwAttrib & FILE_ATTRIBUTE_DIRECTORY)) {
-        std::string pathStr(path.begin(), path.end());
-        DebugLogger::Log(DebugLogger::WARNING, "DLL not found: %s", pathStr.c_str());
-        return DllHandle();
-    }
-    handle = LoadLibraryW(path.c_str());
-    if (!handle) {
-        const DWORD errorCode = GetLastError();
-        std::string pathStr(path.begin(), path.end());
-        DebugLogger::Log(DebugLogger::CRITICAL, "Failed to load DLL: %s with error code: %d", pathStr.c_str(), errorCode);
-        return DllHandle();
-    }
-    std::string pathStr(path.begin(), path.end());
-    DebugLogger::Log(DebugLogger::INFO, "Successfully loaded DLL: %s", pathStr.c_str());
-    return DllHandle(handle);
-}
-
-template<typename FuncType>
-FuncType getProcAddress(DllHandle& dll, const std::string& funcName) {
-    const FARPROC proc = GetProcAddress(dll.get(), funcName.c_str());
-    if (!proc) {
-        const DWORD errorCode = GetLastError();
-        throw DllError(errorCode, "Failed to find function '" + funcName + "'");
-    }
-    return reinterpret_cast<FuncType>(proc);
-}
 
 #define PATCH_ADDRESS 0x007D1496
-#define PATCH_SIGNATURE { 0x75, 0x40 }
-#define PATCH_BYTES { 0x90, 0x90 }
-#define PATCH_SIZE sizeof(PATCH_BYTES)
+#define PATCH_SIZE 2
 
+
+#pragma section(".injsec", read, execute, shared)
+__declspec(allocate(".injsec")) char dummyInjSec = 1;  // Instead of 0
+
+
+
+
+
+
+
+
+
+// Line 65-66: Explicit array definitions
+static const BYTE PATCH_SIGNATURE[2] = { 0x75, 0x40 }; // 2 bytes: JNZ instruction
+static const BYTE PATCH_BYTES[2] = { 0x90, 0x90 };     // 2 bytes: NOP NOP
+
+// Function declarations
+DWORD_PTR FindPatchAddress(const BYTE* signature, size_t size);
+BYTE* FindPattern(BYTE* base, DWORD size, const BYTE* pattern, const char* mask);
+
+// Line ~84: FindPatchAddress definition starts
 DWORD_PTR FindPatchAddress(BYTE* signature, size_t sigSize) {
     SYSTEM_INFO sysInfo;
     GetSystemInfo(&sysInfo);
@@ -171,7 +87,7 @@ DWORD_PTR FindPatchAddress(BYTE* signature, size_t sigSize) {
             baseAddress += 0x1000;
             continue;
         }
-        if (mbi.State == MEM_COMMIT && (mbi.Protect & PAGE_EXECUTE_READWRITE || mbi.Protect & PAGE_EXECUTE_READ)) {
+        if (mbi.State == MEM_COMMIT && (mbi.Protect & (PAGE_EXECUTE_READWRITE | PAGE_EXECUTE_READ))) {
             DWORD_PTR regionEnd = (DWORD_PTR)mbi.BaseAddress + mbi.RegionSize - sigSize;
             for (DWORD_PTR addr = (DWORD_PTR)mbi.BaseAddress; addr < regionEnd; addr++) {
                 SIZE_T bytesRead = 0;
@@ -194,6 +110,7 @@ DWORD_PTR FindPatchAddress(BYTE* signature, size_t sigSize) {
     return 0;
 }
 
+// Line ~110: PatchMultiplayerLobby starts
 void PatchMultiplayerLobby(HANDLE hProcess, LPVOID patchAddr) {
     DWORD oldProtect;
     MEMORY_BASIC_INFORMATION mbi;
@@ -205,9 +122,9 @@ void PatchMultiplayerLobby(HANDLE hProcess, LPVOID patchAddr) {
         return;
     }
     if (VirtualProtectEx(hProcess, patchAddr, PATCH_SIZE, PAGE_EXECUTE_READWRITE, &oldProtect)) {
-        BYTE patchBytes[] = PATCH_BYTES;
         SIZE_T bytesWritten;
-        if (WriteProcessMemory(hProcess, patchAddr, patchBytes, sizeof(patchBytes), &bytesWritten)) {
+        // Line ~123: WriteProcessMemory call
+        if (WriteProcessMemory(hProcess, patchAddr, PATCH_BYTES, PATCH_SIZE, &bytesWritten)) {
             if (!VirtualProtectEx(hProcess, patchAddr, PATCH_SIZE, oldProtect, &oldProtect)) {
                 DebugLogger::Log(DebugLogger::WARNING, "Failed to restore original memory protection.");
             }
@@ -227,48 +144,13 @@ void PatchMultiplayerLobby(HANDLE hProcess, LPVOID patchAddr) {
     }
 }
 
-```cpp
-void PatchMultiplayerLobby(HANDLE hProcess, LPVOID patchAddr) {
-    DWORD oldProtect;
-    MEMORY_BASIC_INFORMATION mbi;
-    if (VirtualQueryEx(hProcess, patchAddr, &mbi, sizeof(mbi))) {
-        DebugLogger::Log(DebugLogger::INFO, "Current Memory Protection: %lu", mbi.Protect);
-    }
-    else {
-        DebugLogger::Log(DebugLogger::CRITICAL, "Failed to query memory protection.");
-        return;
-    }
-    if (VirtualProtectEx(hProcess, patchAddr, PATCH_SIZE, PAGE_EXECUTE_READWRITE, &oldProtect)) {
-        BYTE patchBytes[] = PATCH_BYTES;
-        SIZE_T bytesWritten;
-        if (WriteProcessMemory(hProcess, patchAddr, patchBytes, sizeof(patchBytes), &bytesWritten)) {
-            if (!VirtualProtectEx(hProcess, patchAddr, PATCH_SIZE, oldProtect, &oldProtect)) {
-                DebugLogger::Log(DebugLogger::WARNING, "Failed to restore original memory protection.");
-            }
-            else {
-                MessageBoxA(nullptr, "[+] Successfully patched multiplayer lobby!", "Success", MB_OK);
-                return;
-            }
-        }
-        else {
-            DWORD dwError = GetLastError();
-            DebugLogger::Log(DebugLogger::CRITICAL, "Failed to write memory: %lu", dwError);
-        }
-    }
-    else {
-        DWORD dwError = GetLastError();
-        DebugLogger::Log(DebugLogger::CRITICAL, "Failed to change memory protection: %lu", dwError);
-    }
-}
-```
 void PatchMultiplayerLobbylog() {
     HANDLE hProcess = GetCurrentProcess();
     if (!hProcess) {
         MessageBoxA(nullptr, "[-] Failed to open process!", "Error", MB_ICONERROR);
         return;
     }
-    BYTE signature[] = PATCH_SIGNATURE;
-    DWORD_PTR patchAddr = FindPatchAddress(signature, sizeof(signature));
+    DWORD_PTR patchAddr = FindPatchAddress(PATCH_SIGNATURE, PATCH_SIZE);
     if (!patchAddr) {
         MessageBoxA(nullptr, "[-] Could not find patch address!", "Error", MB_ICONERROR);
         return;
@@ -280,9 +162,8 @@ void PatchMultiplayerLobbylog() {
     }
     DWORD oldProtect;
     if (VirtualProtect((LPVOID)patchAddr, PATCH_SIZE, PAGE_EXECUTE_READWRITE, &oldProtect)) {
-        BYTE patchBytes[] = PATCH_BYTES;
         SIZE_T bytesWritten;
-        if (WriteProcessMemory(hProcess, (LPVOID)patchAddr, patchBytes, sizeof(patchBytes), &bytesWritten)) {
+        if (WriteProcessMemory(hProcess, (LPVOID)patchAddr, PATCH_BYTES, PATCH_SIZE, &bytesWritten)) {
             VirtualProtect((LPVOID)patchAddr, PATCH_SIZE, oldProtect, &oldProtect);
             MessageBoxA(nullptr, "[+] Successfully patched multiplayer lobby!", "Success", MB_OK);
             return;
@@ -291,9 +172,8 @@ void PatchMultiplayerLobbylog() {
     MessageBoxA(nullptr, "[-] Failed to patch memory!", "Error", MB_ICONERROR);
 }
 
-
 BYTE* FindPattern(BYTE* base, DWORD size, const BYTE* pattern, const char* mask) {
-    DWORD patternLength = (DWORD)strlen(mask);
+    DWORD patternLength = static_cast<DWORD>(strlen(mask));
     for (DWORD i = 0; i <= size - patternLength; i++) {
         bool found = true;
         for (DWORD j = 0; j < patternLength; j++) {
@@ -334,11 +214,11 @@ struct MemoryPool {
 };
 
 static MemoryPool gameMemoryPool;
-static std::once_flag initPoolFlag;
 static std::mutex headMutex;
 
 void InitMemoryPool() {
-    std::call_once(initPoolFlag, []() {
+    static bool initialized = false;
+    if (!initialized) {
         char* p = static_cast<char*>(VirtualAlloc(nullptr, TOTAL_POOL_SIZE, MEM_RESERVE | MEM_COMMIT, PAGE_READWRITE));
         if (!p) {
             MessageBoxA(nullptr, "Failed to allocate game memory pool!", "Error", MB_OK | MB_ICONERROR);
@@ -348,7 +228,8 @@ void InitMemoryPool() {
         gameMemoryPool.offset.store(0, std::memory_order_relaxed);
         gameMemoryPool.head.store(nullptr, std::memory_order_relaxed);
         gameMemoryPool.freeList.store(nullptr, std::memory_order_relaxed);
-        });
+        initialized = true;
+    }
 }
 
 void CleanupMemoryPool() {
@@ -553,6 +434,10 @@ bool EnableLAA(const std::string& exePath) {
     return true;
 }
 
+DWORD AlignValue(DWORD value, DWORD alignment) {
+    return (value + alignment - 1) & ~(alignment - 1);
+}
+
 bool InjectInjsec(const std::string& exePath) {
     DebugLogger::Log(DebugLogger::INFO, "InjectInjsec: Opening file %s", exePath.c_str());
     std::fstream f(exePath, std::ios::in | std::ios::out | std::ios::binary);
@@ -581,9 +466,6 @@ bool InjectInjsec(const std::string& exePath) {
     f.read(reinterpret_cast<char*>(secs.data()), secCount * sizeof(IMAGE_SECTION_HEADER));
     DWORD fAlign = nth.OptionalHeader.FileAlignment;
     DWORD sAlign = nth.OptionalHeader.SectionAlignment;
-    auto AlignValue = [](DWORD value, DWORD alignment) {
-        return (value + alignment - 1) & ~(alignment - 1);
-        };
     IMAGE_SECTION_HEADER& lastSec = secs.back();
     DWORD newSecRaw = AlignValue(lastSec.PointerToRawData + lastSec.SizeOfRawData, fAlign);
     DWORD newSecVA = AlignValue(lastSec.VirtualAddress + lastSec.Misc.VirtualSize, sAlign);
@@ -609,11 +491,11 @@ bool InjectInjsec(const std::string& exePath) {
     return true;
 }
 
+// Line ~454: RunPatch starts
 void RunPatch() {
     DebugLogger::Log(DebugLogger::INFO, "RunPatch: Executing in-game modifications...");
     HANDLE hProcess = GetCurrentProcess();
-    BYTE signature[] = PATCH_SIGNATURE;
-    DWORD_PTR patchAddr = FindPatchAddress(signature, sizeof(signature));
+    DWORD_PTR patchAddr = FindPatchAddress(PATCH_SIGNATURE, PATCH_SIZE);
     if (!patchAddr) {
         DebugLogger::Log(DebugLogger::CRITICAL, "RunPatch: Could not find patch address!");
         MessageBoxA(nullptr, "[-] Could not find patch address!", "Error", MB_ICONERROR);
@@ -644,47 +526,35 @@ bool PatchSoulstorm(const std::string& path) {
 std::wstring GetSoulstormPath() {
     HKEY hKey;
     const wchar_t* regPath = L"SOFTWARE\\WOW6432Node\\THQ\\Dawn of War - Soulstorm";
-    
     if (RegOpenKeyExW(HKEY_LOCAL_MACHINE, regPath, 0, KEY_READ, &hKey) != ERROR_SUCCESS) {
         throw std::runtime_error("Failed to open registry key for Soulstorm");
     }
-    
     wchar_t buffer[MAX_PATH];
     DWORD bufferSize = sizeof(buffer);
     DWORD type = REG_SZ;
-    
     if (RegQueryValueExW(hKey, L"InstallLocation", 0, &type, (LPBYTE)buffer, &bufferSize) != ERROR_SUCCESS) {
         RegCloseKey(hKey);
         throw std::runtime_error("Failed to read InstallLocation from registry");
     }
-    
     RegCloseKey(hKey);
-    
     std::wstring path = buffer;
     if (!path.empty() && path.back() != L'\\') {
         path += L'\\';
     }
-    
-    // Verify the directory exists
     if (GetFileAttributesW(path.c_str()) == INVALID_FILE_ATTRIBUTES) {
         throw std::runtime_error("Soulstorm installation directory not found");
     }
-    
     return path;
 }
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
     DebugLogger::Init();
     DebugLogger::Log(DebugLogger::INFO, "WinMain started.");
-    
-    // Check admin privileges
     if (!IsRunningAsAdmin()) {
         DebugLogger::Log(DebugLogger::CRITICAL, "Not running as admin. Relaunching...");
         RelaunchAsAdmin();
         return 0;
     }
-
-    // Get user selected EXE
     std::string soulExe = PickSoulstormExe();
     if (soulExe.empty()) {
         DebugLogger::Log(DebugLogger::CRITICAL, "No EXE selected by user.");
@@ -692,9 +562,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
         return 1;
     }
     DebugLogger::Log(DebugLogger::INFO, "User selected EXE: %s", soulExe.c_str());
-
     try {
-        // Get Soulstorm installation path from registry and load DLL
         DebugLogger::Log(DebugLogger::INFO, "Getting Soulstorm path from registry...");
         std::wstring soulstormPath;
         try {
@@ -706,16 +574,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
             MessageBoxA(nullptr, "Failed to locate Soulstorm installation in registry.", "Error", MB_ICONERROR);
             return 1;
         }
-
-        // Construct and verify DLL path
         const std::wstring gdiHookPath = soulstormPath + L"GDI HOOKING DLL.dll";
         if (GetFileAttributesW(gdiHookPath.c_str()) == INVALID_FILE_ATTRIBUTES) {
             DebugLogger::Log(DebugLogger::CRITICAL, "GDI HOOKING DLL.dll not found in Soulstorm directory");
             MessageBoxA(nullptr, "GDI HOOKING DLL.dll not found in Soulstorm directory.", "Error", MB_ICONERROR);
             return 1;
         }
-
-        // Load the DLL
         DebugLogger::Log(DebugLogger::INFO, "Loading GDI Hooking DLL...");
         DllHandle gdiHookDll = loadDll(gdiHookPath);
         if (!gdiHookDll.get()) {
@@ -723,15 +587,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
             MessageBoxA(nullptr, "Failed to load GDI HOOKING DLL.", "Error", MB_ICONERROR);
             return 1;
         }
-
-        // Apply patches
         if (!PatchSoulstorm(soulExe)) {
             DebugLogger::Log(DebugLogger::CRITICAL, "PatchSoulstorm failed.");
             MessageBoxA(nullptr, "Patch failed – multiplayer net-lobby might remain hidden.", "Patch Error", MB_ICONERROR);
             return 1;
         }
-
-        // Success message
         MessageBoxA(nullptr,
             "Soulstorm Patch Applied:\n\n"
             " - LAA enabled\n"
@@ -752,7 +612,19 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
         MessageBoxA(nullptr, "Unknown error occurred.", "Error", MB_ICONERROR);
         return 1;
     }
-
     DebugLogger::Cleanup();
+    return 0;
+}
+
+DWORD_PTR FindPatchAddress(const BYTE* signature, size_t size) {
+    MEMORY_BASIC_INFORMATION mbi;
+    BYTE* base = nullptr;
+    while (VirtualQuery(base, &mbi, sizeof(mbi))) {
+        if (mbi.State == MEM_COMMIT && !(mbi.Protect & (PAGE_GUARD | PAGE_NOACCESS))) {
+            BYTE* found = FindPattern((BYTE*)mbi.BaseAddress, mbi.RegionSize, signature, "xx");
+            if (found) return (DWORD_PTR)found;
+        }
+        base = (BYTE*)mbi.BaseAddress + mbi.RegionSize;
+    }
     return 0;
 }

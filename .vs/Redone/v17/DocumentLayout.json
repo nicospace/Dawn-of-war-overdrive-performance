@@ -1,37 +1,57 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\",
+  "WorkspaceRootPath": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D008A5A-E8D1-4490-83A0-77042B781159}|Redone\\Redone.vcxproj|C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\Redone\\Redoneproject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{4D008A5A-E8D1-4490-83A0-77042B781159}|Redone\\Redone.vcxproj|C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\Redone\\Redoneproject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4D008A5A-E8D1-4490-83A0-77042B781159}|Redone\\Redone.vcxproj|solutionrelative:Redone\\Redoneproject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\SDLThread.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|solutionrelative:GDI HOOKING DLL\\SDLThread.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{4D008A5A-E8D1-4490-83A0-77042B781159}|Redone\\Redone.vcxproj|C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\Redone\\DllUtils.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4D008A5A-E8D1-4490-83A0-77042B781159}|Redone\\Redone.vcxproj|solutionrelative:Redone\\DllUtils.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\ThreadSafeQueue.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|solutionrelative:GDI HOOKING DLL\\ThreadSafeQueue.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{4D008A5A-E8D1-4490-83A0-77042B781159}|Redone\\Redone.vcxproj|C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\Redone\\DllUtils.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4D008A5A-E8D1-4490-83A0-77042B781159}|Redone\\Redone.vcxproj|solutionrelative:Redone\\DllUtils.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\dllmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{4D008A5A-E8D1-4490-83A0-77042B781159}|Redone\\Redone.vcxproj|C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\Redone\\DebugLogger.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4D008A5A-E8D1-4490-83A0-77042B781159}|Redone\\Redone.vcxproj|solutionrelative:Redone\\DebugLogger.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D008A5A-E8D1-4490-83A0-77042B781159}|Redone\\Redone.vcxproj|C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\Redone\\DebugLogger.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4D008A5A-E8D1-4490-83A0-77042B781159}|Redone\\Redone.vcxproj|solutionrelative:Redone\\DebugLogger.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D008A5A-E8D1-4490-83A0-77042B781159}|Redone\\Redone.vcxproj|C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\Redone\\pch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4D008A5A-E8D1-4490-83A0-77042B781159}|Redone\\Redone.vcxproj|solutionrelative:Redone\\pch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\GDI HOOKING DLL\\dllmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|solutionrelative:GDI HOOKING DLL\\dllmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\SDLThread.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\GDI HOOKING DLL\\SDLThread.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|solutionrelative:GDI HOOKING DLL\\SDLThread.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\GDI HOOKING DLL\\ThreadSafeQueue.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|solutionrelative:GDI HOOKING DLL\\ThreadSafeQueue.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\GDI HOOKING DLL\\SDLThread.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|solutionrelative:GDI HOOKING DLL\\SDLThread.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\RenderRequest.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\GDI HOOKING DLL\\RenderRequest.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|solutionrelative:GDI HOOKING DLL\\RenderRequest.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\IATHooking.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\GDI HOOKING DLL\\IATHooking.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|solutionrelative:GDI HOOKING DLL\\IATHooking.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\IATHooking.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\GDI HOOKING DLL\\IATHooking.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0BF4D61B-F60F-435C-A6BC-B3C9D002B9B2}|GDI HOOKING DLL\\GDI HOOKING DLL.vcxproj|solutionrelative:GDI HOOKING DLL\\IATHooking.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
@@ -45,28 +65,88 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DllUtils.cpp",
+              "DocumentMoniker": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\Redone\\DllUtils.cpp",
+              "RelativeDocumentMoniker": "Redone\\DllUtils.cpp",
+              "ToolTip": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\Redone\\DllUtils.cpp",
+              "RelativeToolTip": "Redone\\DllUtils.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-26T22:11:22.638Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DllUtils.h",
+              "DocumentMoniker": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\Redone\\DllUtils.h",
+              "RelativeDocumentMoniker": "Redone\\DllUtils.h",
+              "ToolTip": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\Redone\\DllUtils.h",
+              "RelativeToolTip": "Redone\\DllUtils.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-26T22:10:55.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DebugLogger.cpp",
+              "DocumentMoniker": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\Redone\\DebugLogger.cpp",
+              "RelativeDocumentMoniker": "Redone\\DebugLogger.cpp",
+              "ToolTip": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\Redone\\DebugLogger.cpp",
+              "RelativeToolTip": "Redone\\DebugLogger.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-26T22:10:20.067Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DebugLogger.h",
+              "DocumentMoniker": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\Redone\\DebugLogger.h",
+              "RelativeDocumentMoniker": "Redone\\DebugLogger.h",
+              "ToolTip": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\Redone\\DebugLogger.h",
+              "RelativeToolTip": "Redone\\DebugLogger.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-26T22:10:04.048Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "pch.h",
+              "DocumentMoniker": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\Redone\\pch.h",
+              "RelativeDocumentMoniker": "Redone\\pch.h",
+              "ToolTip": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\Redone\\pch.h",
+              "RelativeToolTip": "Redone\\pch.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-26T22:09:44.588Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Redoneproject.cpp",
-              "DocumentMoniker": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\Redone\\Redoneproject.cpp",
+              "DocumentMoniker": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\Redone\\Redoneproject.cpp",
               "RelativeDocumentMoniker": "Redone\\Redoneproject.cpp",
-              "ToolTip": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\Redone\\Redoneproject.cpp",
+              "ToolTip": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\Redone\\Redoneproject.cpp",
               "RelativeToolTip": "Redone\\Redoneproject.cpp",
-              "ViewState": "AgIAAHMCAAAAAAAAAAAUwLECAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAADsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-21T20:10:27.129Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "IATHooking.cpp",
-              "DocumentMoniker": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\IATHooking.cpp",
+              "DocumentMoniker": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\GDI HOOKING DLL\\IATHooking.cpp",
               "RelativeDocumentMoniker": "GDI HOOKING DLL\\IATHooking.cpp",
-              "ToolTip": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\IATHooking.cpp",
+              "ToolTip": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\GDI HOOKING DLL\\IATHooking.cpp",
               "RelativeToolTip": "GDI HOOKING DLL\\IATHooking.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -74,11 +154,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "IATHooking.h",
-              "DocumentMoniker": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\IATHooking.h",
+              "DocumentMoniker": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\GDI HOOKING DLL\\IATHooking.h",
               "RelativeDocumentMoniker": "GDI HOOKING DLL\\IATHooking.h",
-              "ToolTip": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\IATHooking.h",
+              "ToolTip": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\GDI HOOKING DLL\\IATHooking.h",
               "RelativeToolTip": "GDI HOOKING DLL\\IATHooking.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -86,11 +166,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "ThreadSafeQueue.h",
-              "DocumentMoniker": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\ThreadSafeQueue.h",
+              "DocumentMoniker": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\GDI HOOKING DLL\\ThreadSafeQueue.h",
               "RelativeDocumentMoniker": "GDI HOOKING DLL\\ThreadSafeQueue.h",
-              "ToolTip": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\ThreadSafeQueue.h",
+              "ToolTip": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\GDI HOOKING DLL\\ThreadSafeQueue.h",
               "RelativeToolTip": "GDI HOOKING DLL\\ThreadSafeQueue.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -98,11 +178,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "SDLThread.h",
-              "DocumentMoniker": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\SDLThread.h",
+              "DocumentMoniker": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\GDI HOOKING DLL\\SDLThread.h",
               "RelativeDocumentMoniker": "GDI HOOKING DLL\\SDLThread.h",
-              "ToolTip": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\SDLThread.h",
+              "ToolTip": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\GDI HOOKING DLL\\SDLThread.h",
               "RelativeToolTip": "GDI HOOKING DLL\\SDLThread.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -110,35 +190,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "Microsoft.CppBuild.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\VC\\v170\\Microsoft.CppBuild.targets",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\VC\\v170\\Microsoft.CppBuild.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\VC\\v170\\Microsoft.CppBuild.targets",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\VC\\v170\\Microsoft.CppBuild.targets",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\VC\\v170\\Microsoft.CppBuild.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\VC\\v170\\Microsoft.CppBuild.targets",
               "ViewState": "AgIAAOwBAAAAAAAAAAAtwAcCAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
               "WhenOpened": "2025-02-21T16:24:18.58Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "dllmain.cpp",
-              "DocumentMoniker": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\dllmain.cpp",
+              "DocumentMoniker": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\GDI HOOKING DLL\\dllmain.cpp",
               "RelativeDocumentMoniker": "GDI HOOKING DLL\\dllmain.cpp",
-              "ToolTip": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\dllmain.cpp",
+              "ToolTip": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\GDI HOOKING DLL\\dllmain.cpp",
               "RelativeToolTip": "GDI HOOKING DLL\\dllmain.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-21T14:14:40.636Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "RenderRequest.h",
-              "DocumentMoniker": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\RenderRequest.h",
+              "DocumentMoniker": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\GDI HOOKING DLL\\RenderRequest.h",
               "RelativeDocumentMoniker": "GDI HOOKING DLL\\RenderRequest.h",
-              "ToolTip": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\RenderRequest.h",
+              "ToolTip": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\GDI HOOKING DLL\\RenderRequest.h",
               "RelativeToolTip": "GDI HOOKING DLL\\RenderRequest.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -146,11 +226,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "SDLThread.cpp",
-              "DocumentMoniker": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\SDLThread.cpp",
+              "DocumentMoniker": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\GDI HOOKING DLL\\SDLThread.cpp",
               "RelativeDocumentMoniker": "GDI HOOKING DLL\\SDLThread.cpp",
-              "ToolTip": "C:\\Users\\n\\Documents\\Project ccai\\Redone\\Github source\\GDI HOOKING DLL\\SDLThread.cpp",
+              "ToolTip": "C:\\Users\\n\\source\\repos\\Dawn-of-war-overdrive-performance latest\\GDI HOOKING DLL\\SDLThread.cpp",
               "RelativeToolTip": "GDI HOOKING DLL\\SDLThread.cpp",
               "ViewState": "AgIAAEoAAAAAAAAAAAAQwHsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",

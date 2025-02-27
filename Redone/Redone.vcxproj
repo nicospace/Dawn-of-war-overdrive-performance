@@ -94,12 +94,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Libraries\SDL3-3.2.4\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL3.lib;User32.lib;Imagehlp.lib;gdi32.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Libraries\SDL3-3.2.4\lib\x86</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <!-- Compile & Link Settings for Debug | x64 -->
@@ -135,6 +138,7 @@
   <!-- Source Files -->
   <ItemGroup>
     <ClCompile Include="DebugLogger.cpp" />
+    <ClCompile Include="DllUtils.cpp" />
     <ClCompile Include="PatchLobby.cpp" />
     <ClCompile Include="Redoneproject.cpp" />
     <ClCompile Include="ZeroPEChecksum.cpp" />
@@ -142,6 +146,7 @@
   <!-- Header Files -->
   <ItemGroup>
     <ClInclude Include="DebugLogger.h" />
+    <ClInclude Include="DllUtils.h" />
     <ClInclude Include="HookDLLGlobals.h" />
     <ClInclude Include="patchdata.h" />
     <ClInclude Include="pch.h" />
