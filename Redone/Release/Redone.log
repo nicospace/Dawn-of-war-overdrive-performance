@@ -1,12 +1,11 @@
 ﻿  DebugLogger.cpp
   DllUtils.cpp
-  PatchLobby.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xutility(4829,18): warning C4244: '=': conversion from 'const wchar_t' to 'char', possible loss of data
   Redoneproject.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xutility(4829,18): warning C4244: '=': conversion from 'const wchar_t' to 'char', possible loss of data
   (compiling source file 'DllUtils.cpp')
       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xutility(4829,18):
       the template instantiation context (the oldest one first) is
-          C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\Redone\DllUtils.cpp(9,28):
+          C:\Users\n\source\repos\Dawn-of-war-overdrive-performance forked\Redone\DllUtils.cpp(9,28):
           see reference to function template instantiation 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<std::_String_const_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(_Iter,_Iter,const _Alloc &)' being compiled
           with
           [
@@ -14,7 +13,7 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.3480
               _Iter=std::_String_const_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
               _Alloc=std::allocator<char>
           ]
-              C:\Users\n\source\repos\Dawn-of-war-overdrive-performance latest\Redone\DllUtils.cpp(9,28):
+              C:\Users\n\source\repos\Dawn-of-war-overdrive-performance forked\Redone\DllUtils.cpp(9,28):
               see the first reference to 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string' in 'loadDll'
           C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xstring(788,17):
           see reference to function template instantiation 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct_from_iter<const wchar_t*,const wchar_t*,_Size_type>(_Iter,const _Sent,_Size)' being compiled

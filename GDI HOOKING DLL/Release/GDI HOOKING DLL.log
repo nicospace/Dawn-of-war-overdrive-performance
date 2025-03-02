@@ -1,10 +1,13 @@
-﻿  pch.cpp
-  dllmain.cpp
-  IATHooking.cpp
-  SDLThread.cpp
+﻿  dllmain.cpp
+C:\Users\n\source\repos\Dawn-of-war-overdrive-performance forked\GDI HOOKING DLL\dllmain.cpp(635,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '/dllmain.cpp')
+  
+C:\Users\n\source\repos\Dawn-of-war-overdrive-performance forked\GDI HOOKING DLL\dllmain.cpp(635,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  (compiling source file '/dllmain.cpp')
+  
      Creating library C:\Users\n\Documents\Output directory\GDI AND RENDER\GDI HOOKING DLL.lib and object C:\Users\n\Documents\Output directory\GDI AND RENDER\GDI HOOKING DLL.exp
   Generating code
   Previous IPDB not found, fall back to full compilation.
-  All 96 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 1 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   GDI HOOKING DLL.vcxproj -> C:\Users\n\Documents\Output directory\GDI AND RENDER\GDI HOOKING DLL.dll

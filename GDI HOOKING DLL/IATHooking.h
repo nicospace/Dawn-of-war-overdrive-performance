@@ -3,11 +3,14 @@
 #include <ImageHlp.h>
 #include <stddef.h>
 
-// Structure for an IAT hook entry
-struct DGI_IAT_Hook {
-    const char* funcName;   // Name of the function to hook
-    FARPROC replacement;    // Pointer to our replacement function
-};
+#ifndef IATHOOKING_H
+#define IATHOOKING_H
 
-// Function prototype for IAT hooking
+typedef struct {
+    const char* funcName;
+    FARPROC replacement;
+} DGI_IAT_Hook;
+
 void HookIATForModule(HMODULE hModule, const char* targetDLL, DGI_IAT_Hook hooks[], size_t hookCount);
+
+#endif

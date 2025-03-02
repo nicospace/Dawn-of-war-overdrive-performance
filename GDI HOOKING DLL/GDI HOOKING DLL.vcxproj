@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -106,7 +106,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Libraries\SDL3-3.2.4\include;C:\Users\n\Documents\Project ccai\Redone\Github source\GDI HOOKING DLL;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Libraries\SDL3-3.2.4\include;C:\Users\n\Documents\Project ccai\Redone\Github source\GDI HOOKING DLL;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;C:\VulkanSDK\1.4.304.1\Include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -114,8 +114,8 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalLibraryDirectories>C:\Libraries\SDL3-3.2.4\lib\x86</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL3.lib;User32.lib;Imagehlp.lib;gdi32.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Libraries\SDL3-3.2.4\lib\x86;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86;C:\VulkanSDK\1.4.304.1\Lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL3.lib;User32.lib;Imagehlp.lib;gdi32.lib;d3d9.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -159,6 +159,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="RenderRequest.h" />
     <ClInclude Include="SDLThread.h" />
+    <ClInclude Include="SDL_Vulkan_D3D9.h" />
     <ClInclude Include="ThreadSafeQueue.h" />
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +171,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="SDLCompat.cpp" />
     <ClCompile Include="SDLThread.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
