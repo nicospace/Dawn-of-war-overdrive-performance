@@ -24,6 +24,7 @@
     <ProjectGuid>{4d008a5a-e8d1-4490-83a0-77042b781159}</ProjectGuid>
     <RootNamespace>Redone</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Overdrive exe patcher</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <!-- Debug | Win32 Configuration -->
@@ -139,7 +140,7 @@
   <ItemGroup>
     <ClCompile Include="DebugLogger.cpp" />
     <ClCompile Include="DllUtils.cpp" />
-    <ClCompile Include="Redoneproject.cpp" />
+    <ClCompile Include="Overdrive exe.cpp" />
     <ClCompile Include="ZeroPEChecksum.cpp" />
   </ItemGroup>
   <!-- Header Files -->

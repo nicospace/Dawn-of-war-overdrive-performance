@@ -24,6 +24,7 @@
     <ProjectGuid>{0bf4d61b-f60f-435c-a6bc-b3c9d002b9b2}</ProjectGuid>
     <RootNamespace>GDIHOOKINGDLL</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>SDLVulkan dll</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

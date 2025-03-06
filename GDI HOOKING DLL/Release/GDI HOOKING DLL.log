@@ -1,13 +1,18 @@
-﻿  dllmain.cpp
-C:\Users\n\source\repos\Dawn-of-war-overdrive-performance forked\GDI HOOKING DLL\dllmain.cpp(635,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: The intermediate directory (Release\) contains files shared from another project (GDI HOOKING DLL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  pch.cpp
+  dllmain.cpp
+C:\Users\n\source\repos\Dawn-of-war-overdrive-performance DELETE the others\GDI HOOKING DLL\dllmain.cpp(587,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file '/dllmain.cpp')
   
-C:\Users\n\source\repos\Dawn-of-war-overdrive-performance forked\GDI HOOKING DLL\dllmain.cpp(635,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\n\source\repos\Dawn-of-war-overdrive-performance DELETE the others\GDI HOOKING DLL\dllmain.cpp(587,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   (compiling source file '/dllmain.cpp')
   
-     Creating library C:\Users\n\Documents\Output directory\GDI AND RENDER\GDI HOOKING DLL.lib and object C:\Users\n\Documents\Output directory\GDI AND RENDER\GDI HOOKING DLL.exp
+  IATHooking.cpp
+  SDLCompat.cpp
+  SDLThread.cpp
+     Creating library C:\Users\n\Documents\Output directory\GDI AND RENDER\SDLVulkan dll.lib and object C:\Users\n\Documents\Output directory\GDI AND RENDER\SDLVulkan dll.exp
   Generating code
   Previous IPDB not found, fall back to full compilation.
   All 1 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
-  GDI HOOKING DLL.vcxproj -> C:\Users\n\Documents\Output directory\GDI AND RENDER\GDI HOOKING DLL.dll
+  GDI HOOKING DLL.vcxproj -> C:\Users\n\Documents\Output directory\GDI AND RENDER\SDLVulkan dll.dll

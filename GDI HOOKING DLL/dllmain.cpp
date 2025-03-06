@@ -15,41 +15,29 @@
 #pragma comment(lib, "d3d9.lib")
 #pragma comment(lib, "vulkan-1.lib") // Link Vulkan library
 
+
 #ifndef STATUS_SUCCESS
 #define STATUS_SUCCESS ((NTSTATUS)0x00000000L)
 #endif
-// If your SDL3 lacks these functions, or they're named differently:
+
 #ifndef SDL_SetCursorVisible
-    // Map SDL_SetCursorVisible(toggle) to SDL_ShowCursor/SDL_HideCursor with no arguments.
-#define SDL_SetCursorVisible(toggle) \
-        ( (toggle) ? SDL_ShowCursor() : SDL_HideCursor() )
+#define SDL_SetCursorVisible(toggle) ((toggle) ? SDL_ShowCursor() : SDL_HideCursor())
 #endif
 
 #ifndef SDL_GetWindowNative
-    // Return nullptr so SDL_GetWindowNative(window, "win32") compiles but does nothing real.
-#define SDL_GetWindowNative(win, type) \
-        (nullptr)
+#define SDL_GetWindowNative(win, type) (nullptr)
 #endif
 
 #ifndef SDL_GetNativeWindow
-    // Same idea for SDL_GetNativeWindow. Return nullptr.
-#define SDL_GetNativeWindow(win, type) \
-        (nullptr)
+#define SDL_GetNativeWindow(win, type) (nullptr)
 #endif
 
-// GDI Function Pointers
-typedef NTSTATUS(__stdcall* pNtGdiBitBlt)(HDC, int, int, int, int, HDC, int, int, DWORD);
-typedef NTSTATUS(__stdcall* pNtGdiStretchBlt)(HDC, int, int, int, int, HDC, int, int, int, int, DWORD);
-typedef NTSTATUS(__stdcall* pNtGdiPatBlt)(HDC, int, int, int, int, DWORD);
-
-pNtGdiBitBlt OriginalNtGdiBitBlt = nullptr;
-pNtGdiStretchBlt OriginalNtGdiStretchBlt = nullptr;
-pNtGdiPatBlt OriginalNtGdiPatBlt = nullptr;
-
+#ifndef VK_KHR_WIN32_SURFACE_EXTENSION_NAME
+#define VK_KHR_WIN32_SURFACE_EXTENSION_NAME "VK_KHR_win32_surface"
+#endif
 
 struct IDirect3D8;
 
-// Direct3D Function Pointers
 typedef IDirect3D9* (WINAPI* pDirect3DCreate9)(UINT);
 typedef HRESULT(WINAPI* pDirect3DCreate9Ex)(UINT, IDirect3D9Ex**);
 typedef IDirect3D8* (WINAPI* pDirect3DCreate8)(UINT);
@@ -58,26 +46,6 @@ pDirect3DCreate9 OriginalDirect3DCreate9 = nullptr;
 pDirect3DCreate9Ex OriginalDirect3DCreate9Ex = nullptr;
 pDirect3DCreate8 OriginalDirect3DCreate8 = nullptr;
 
-// GDI Hooked Functions (Basic Implementations)
-NTSTATUS __stdcall HookedNtGdiBitBlt(HDC hdcDest, int xDest, int yDest, int width, int height, HDC hdcSrc, int xSrc, int ySrc, DWORD rop) {
-    OutputDebugStringA("[GDI HOOK] HookedNtGdiBitBlt called.\n");
-    if (OriginalNtGdiBitBlt) return OriginalNtGdiBitBlt(hdcDest, xDest, yDest, width, height, hdcSrc, xSrc, ySrc, rop);
-    return STATUS_SUCCESS;
-}
-
-NTSTATUS __stdcall HookedNtGdiStretchBlt(HDC hdcDest, int xDest, int yDest, int widthDest, int heightDest, HDC hdcSrc, int xSrc, int ySrc, int widthSrc, int heightSrc, DWORD rop) {
-    OutputDebugStringA("[GDI HOOK] HookedNtGdiStretchBlt called.\n");
-    if (OriginalNtGdiStretchBlt) return OriginalNtGdiStretchBlt(hdcDest, xDest, yDest, widthDest, heightDest, hdcSrc, xSrc, ySrc, widthSrc, heightSrc, rop);
-    return STATUS_SUCCESS;
-}
-
-NTSTATUS __stdcall HookedNtGdiPatBlt(HDC hdc, int x, int y, int width, int height, DWORD rop) {
-    OutputDebugStringA("[GDI HOOK] HookedNtGdiPatBlt called.\n");
-    if (OriginalNtGdiPatBlt) return OriginalNtGdiPatBlt(hdc, x, y, width, height, rop);
-    return STATUS_SUCCESS;
-}
-
-// Vulkan-enabled IDirect3D9 implementation
 class SDL_Vulkan_D3D9 : public IDirect3D9 {
 public:
     SDL_Window* window;
@@ -95,52 +63,42 @@ public:
     VkImage vkSwapchainImage;
     VkImageView vkSwapchainImageView;
     uint32_t refCount;
-#ifndef VK_KHR_WIN32_SURFACE_EXTENSION_NAME
-#define VK_KHR_WIN32_SURFACE_EXTENSION_NAME "VK_KHR_win32_surface"
-#endif
 
     SDL_Vulkan_D3D9(UINT SDKVersion) : refCount(1) {
+        // [Constructor body unchanged for now]
         if (SDL_Init(SDL_INIT_VIDEO) != 0) {
             OutputDebugStringA("[D3D9 HOOK] SDL_Init failed.\n");
             throw std::runtime_error(SDL_GetError());
         }
-
         window = SDL_CreateWindow("SDL Vulkan D3D9", 1024, 768, SDL_WINDOW_VULKAN | SDL_WINDOW_RESIZABLE);
         if (!window) {
             OutputDebugStringA("[D3D9 HOOK] SDL_CreateWindow failed.\n");
             throw std::runtime_error(SDL_GetError());
         }
         const char* extensions[] = { VK_KHR_SURFACE_EXTENSION_NAME, VK_KHR_WIN32_SURFACE_EXTENSION_NAME };
-
         VkApplicationInfo appInfo = { VK_STRUCTURE_TYPE_APPLICATION_INFO };
         appInfo.pApplicationName = "D3D9 Hook";
         appInfo.applicationVersion = VK_MAKE_API_VERSION(0, 1, 0, 0);
         appInfo.pEngineName = "SDL";
         appInfo.engineVersion = VK_MAKE_API_VERSION(0, 1, 0, 0);
         appInfo.apiVersion = VK_API_VERSION_1_0;
-
-       
         VkInstanceCreateInfo createInfo = { VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO };
         createInfo.pApplicationInfo = &appInfo;
         createInfo.enabledExtensionCount = 2;
         createInfo.ppEnabledExtensionNames = extensions;
-
         if (vkCreateInstance(&createInfo, nullptr, &vkInstance) != VK_SUCCESS) {
             OutputDebugStringA("[D3D9 HOOK] vkCreateInstance failed.\n");
             throw std::runtime_error("Vulkan instance creation failed");
         }
-
         if (!SDL_Vulkan_CreateSurface(window, vkInstance, nullptr, &vkSurface)) {
             OutputDebugStringA("[D3D9 HOOK] SDL_Vulkan_CreateSurface failed.\n");
             throw std::runtime_error(SDL_GetError());
         }
-
         uint32_t deviceCount = 0;
         vkEnumeratePhysicalDevices(vkInstance, &deviceCount, nullptr);
         std::vector<VkPhysicalDevice> devices(deviceCount);
         vkEnumeratePhysicalDevices(vkInstance, &deviceCount, devices.data());
         vkPhysicalDevice = devices[0];
-
         uint32_t queueFamilyCount = 0;
         vkGetPhysicalDeviceQueueFamilyProperties(vkPhysicalDevice, &queueFamilyCount, nullptr);
         std::vector<VkQueueFamilyProperties> queueFamilies(queueFamilyCount);
@@ -153,7 +111,6 @@ public:
             if (presentSupport) presentFamily = i;
             if (graphicsFamily != UINT32_MAX && presentFamily != UINT32_MAX) break;
         }
-
         float queuePriority = 1.0f;
         std::vector<VkDeviceQueueCreateInfo> queueCreateInfos;
         VkDeviceQueueCreateInfo queueInfo = { VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO };
@@ -170,15 +127,12 @@ public:
         deviceInfo.queueCreateInfoCount = static_cast<uint32_t>(queueCreateInfos.size());
         deviceInfo.pQueueCreateInfos = queueCreateInfos.data();
         deviceInfo.pEnabledFeatures = &deviceFeatures;
-
         if (vkCreateDevice(vkPhysicalDevice, &deviceInfo, nullptr, &vkDevice) != VK_SUCCESS) {
             OutputDebugStringA("[D3D9 HOOK] vkCreateDevice failed.\n");
             throw std::runtime_error("Vulkan device creation failed");
         }
-
         vkGetDeviceQueue(vkDevice, graphicsFamily, 0, &vkGraphicsQueue);
         vkGetDeviceQueue(vkDevice, presentFamily, 0, &vkPresentQueue);
-
         VkSurfaceCapabilitiesKHR capabilities;
         vkGetPhysicalDeviceSurfaceCapabilitiesKHR(vkPhysicalDevice, vkSurface, &capabilities);
         VkSwapchainCreateInfoKHR swapchainInfo = { VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR };
@@ -194,18 +148,15 @@ public:
         swapchainInfo.compositeAlpha = VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR;
         swapchainInfo.presentMode = VK_PRESENT_MODE_FIFO_KHR;
         swapchainInfo.clipped = VK_TRUE;
-
         if (vkCreateSwapchainKHR(vkDevice, &swapchainInfo, nullptr, &vkSwapchain) != VK_SUCCESS) {
             OutputDebugStringA("[D3D9 HOOK] vkCreateSwapchainKHR failed.\n");
             throw std::runtime_error("Swapchain creation failed");
         }
-
         uint32_t imageCount = 0;
         vkGetSwapchainImagesKHR(vkDevice, vkSwapchain, &imageCount, nullptr);
         std::vector<VkImage> swapchainImages(imageCount);
         vkGetSwapchainImagesKHR(vkDevice, vkSwapchain, &imageCount, swapchainImages.data());
         vkSwapchainImage = swapchainImages[0];
-
         VkImageViewCreateInfo viewInfo = { VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO };
         viewInfo.image = vkSwapchainImage;
         viewInfo.viewType = VK_IMAGE_VIEW_TYPE_2D;
@@ -215,12 +166,10 @@ public:
         viewInfo.subresourceRange.levelCount = 1;
         viewInfo.subresourceRange.baseArrayLayer = 0;
         viewInfo.subresourceRange.layerCount = 1;
-
         if (vkCreateImageView(vkDevice, &viewInfo, nullptr, &vkSwapchainImageView) != VK_SUCCESS) {
             OutputDebugStringA("[D3D9 HOOK] vkCreateImageView failed.\n");
             throw std::runtime_error("Image view creation failed");
         }
-
         VkAttachmentDescription colorAttachment = {};
         colorAttachment.format = VK_FORMAT_B8G8R8A8_UNORM;
         colorAttachment.samples = VK_SAMPLE_COUNT_1_BIT;
@@ -230,24 +179,20 @@ public:
         colorAttachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
         colorAttachment.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
         colorAttachment.finalLayout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;
-
         VkAttachmentReference colorAttachmentRef = { 0, VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL };
         VkSubpassDescription subpass = {};
         subpass.pipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS;
         subpass.colorAttachmentCount = 1;
         subpass.pColorAttachments = &colorAttachmentRef;
-
         VkRenderPassCreateInfo renderPassInfo = { VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO };
         renderPassInfo.attachmentCount = 1;
         renderPassInfo.pAttachments = &colorAttachment;
         renderPassInfo.subpassCount = 1;
         renderPassInfo.pSubpasses = &subpass;
-
         if (vkCreateRenderPass(vkDevice, &renderPassInfo, nullptr, &vkRenderPass) != VK_SUCCESS) {
             OutputDebugStringA("[D3D9 HOOK] vkCreateRenderPass failed.\n");
             throw std::runtime_error("Render pass creation failed");
         }
-
         VkFramebufferCreateInfo framebufferInfo = { VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO };
         framebufferInfo.renderPass = vkRenderPass;
         framebufferInfo.attachmentCount = 1;
@@ -255,31 +200,25 @@ public:
         framebufferInfo.width = capabilities.currentExtent.width;
         framebufferInfo.height = capabilities.currentExtent.height;
         framebufferInfo.layers = 1;
-
         if (vkCreateFramebuffer(vkDevice, &framebufferInfo, nullptr, &vkFramebuffer) != VK_SUCCESS) {
             OutputDebugStringA("[D3D9 HOOK] vkCreateFramebuffer failed.\n");
             throw std::runtime_error("Framebuffer creation failed");
         }
-
         VkCommandPoolCreateInfo poolInfo = { VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO };
         poolInfo.flags = VK_COMMAND_POOL_CREATE_RESET_COMMAND_BUFFER_BIT;
         poolInfo.queueFamilyIndex = graphicsFamily;
-
         if (vkCreateCommandPool(vkDevice, &poolInfo, nullptr, &vkCommandPool) != VK_SUCCESS) {
             OutputDebugStringA("[D3D9 HOOK] vkCreateCommandPool failed.\n");
             throw std::runtime_error("Command pool creation failed");
         }
-
         VkCommandBufferAllocateInfo allocInfo = { VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO };
         allocInfo.commandPool = vkCommandPool;
         allocInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
         allocInfo.commandBufferCount = 1;
-
         if (vkAllocateCommandBuffers(vkDevice, &allocInfo, &vkCommandBuffer) != VK_SUCCESS) {
             OutputDebugStringA("[D3D9 HOOK] vkAllocateCommandBuffers failed.\n");
             throw std::runtime_error("Command buffer allocation failed");
         }
-
         OutputDebugStringA("[D3D9 HOOK] Vulkan initialized successfully.\n");
     }
 
@@ -295,6 +234,7 @@ public:
         SDL_DestroyWindow(window);
         SDL_Quit();
     }
+
     //Problems below
 
 
@@ -420,7 +360,6 @@ public:
 
 // Vulkan-enabled IDirect3DDevice9 implementation
 class SDL_Vulkan_D3D9Device : public IDirect3DDevice9 {
-
 public:
     SDL_Vulkan_D3D9* parent;
     uint32_t refCount;
@@ -433,8 +372,12 @@ public:
     std::vector<VkDeviceMemory> vertexBufferMemory;
     std::vector<VkBuffer> indexBuffers;
     std::vector<VkDeviceMemory> indexBufferMemory;
+    VkExtent2D swapchainExtent;
 
     SDL_Vulkan_D3D9Device(SDL_Vulkan_D3D9* p, D3DPRESENT_PARAMETERS* pPresentationParameters) : parent(p), refCount(1) {
+        swapchainExtent.width = pPresentationParameters->BackBufferWidth;
+        swapchainExtent.height = pPresentationParameters->BackBufferHeight;
+
         VkSemaphoreCreateInfo semaphoreInfo = { VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO };
         vkCreateSemaphore(parent->vkDevice, &semaphoreInfo, nullptr, &vkImageAvailableSemaphore);
         vkCreateSemaphore(parent->vkDevice, &semaphoreInfo, nullptr, &vkRenderFinishedSemaphore);
@@ -446,14 +389,14 @@ public:
         if (vkCreatePipelineLayout(parent->vkDevice, &pipelineLayoutInfo, nullptr, &vkPipelineLayout) != VK_SUCCESS) {
             OutputDebugStringA("[D3D9 DEVICE] vkCreatePipelineLayout failed.\n");
             throw std::runtime_error("Pipeline layout creation failed");
-        };
+        }
 
         VkShaderModule vertShader = CreateShaderModule({
             0x07230203, 0x00010000, 0x00080001, 0x0000000e, 0x00000000, 0x00020011, 0x00000001, 0x0006000b,
             0x00000001, 0x4c534c47, 0x64747320, 0x3035342e, 0x00000000, 0x0003000e, 0x00000000, 0x00000001,
             0x0007000f, 0x00000000, 0x00000004, 0x6e69616d, 0x00000000, 0x00000009, 0x0000000d, 0x00030003,
             0x00000002, 0x000001c2, 0x00040005, 0x00000004, 0x6e69616d, 0x00000000, 0x00050006, 0x00000007,
-            0x00000000, 0x6f6c6f63, 0x00000072, 0x00030005, 0x00000009, 0x00006f63, 0x00040006, 0x0000000b,
+            0x00000000, 0x6f6c6f63, 0x000072, 0x00030005, 0x00000009, 0x00006f63, 0x00040006, 0x0000000b,
             0x00000000, 0x00007675, 0x00030005, 0x0000000d, 0x00000076, 0x00050048, 0x00000007, 0x00000000,
             0x0000000b, 0x00000000, 0x00030047, 0x00000007, 0x00000002, 0x00040048, 0x0000000b, 0x00000000,
             0x00000005, 0x00030047, 0x0000000b, 0x00000002, 0x00020013, 0x00000002, 0x00030021, 0x00000003,
@@ -500,8 +443,8 @@ public:
         inputAssembly.topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;
         inputAssembly.primitiveRestartEnable = VK_FALSE;
 
-        VkViewport viewport = { 0.0f, 0.0f, (float)pPresentationParameters->BackBufferWidth, (float)pPresentationParameters->BackBufferHeight, 0.0f, 1.0f };
-        VkRect2D scissor = { {0, 0}, {pPresentationParameters->BackBufferWidth, pPresentationParameters->BackBufferHeight} };
+        VkViewport viewport = { 0.0f, 0.0f, (float)swapchainExtent.width, (float)swapchainExtent.height, 0.0f, 1.0f };
+        VkRect2D scissor = { {0, 0}, {swapchainExtent.width, swapchainExtent.height} };
         VkPipelineViewportStateCreateInfo viewportState = { VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO };
         viewportState.viewportCount = 1;
         viewportState.pViewports = &viewport;
@@ -570,6 +513,15 @@ public:
         }
         return module;
     }
+
+
+
+
+
+
+
+
+
 
     STDMETHOD(QueryInterface)(REFIID riid, void** ppvObj) override {
         if (riid == IID_IUnknown || riid == IID_IDirect3DDevice9) {
